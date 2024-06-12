@@ -21,3 +21,7 @@ J
 src/app/app.component.html,0/6/06895b2dfff011115a8eded7e3fad29788965566
 >
 src/styles.css,6/f/6f9d98ca6b2005fc0cd4b0f000b670b16bf3c496
+s
+Cpublic/Capture_d_écran_du_2024-06-12_15-46-41-removebg-preview.svg,7/5/75c89b4c167e25969fc1f2a58626dd724777cab1
+?
+public/logo.svg,2/e/2ef8c18f4ecd42ee758cd134671b1d92eee8a6aa
