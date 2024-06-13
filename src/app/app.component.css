@@ -52,7 +52,6 @@ button {
 
 .settingssvg {
   display: flex;
-  justify-items: flex-end;
   color: #9FADBC;
 }
 

@@ -3,3 +3,6 @@ body {
   background-color: #1D2125;
   font-family: Ubuntu;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
