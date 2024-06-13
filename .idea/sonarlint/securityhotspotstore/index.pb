@@ -21,7 +21,19 @@ J
 src/app/app.component.html,0/6/06895b2dfff011115a8eded7e3fad29788965566
 >
 src/styles.css,6/f/6f9d98ca6b2005fc0cd4b0f000b670b16bf3c496
-s
-Cpublic/Capture_d_écran_du_2024-06-12_15-46-41-removebg-preview.svg,7/5/75c89b4c167e25969fc1f2a58626dd724777cab1
-?
-public/logo.svg,2/e/2ef8c18f4ecd42ee758cd134671b1d92eee8a6aa
+I
+src/app/app.component.css,5/5/553209eb77976ca7cea08bc999bbd55a69ad0336
+C
+public/settings.svg,d/3/d3d3cdfa3d244b6c3e727ac3eb4eed782b6c26d8
+]
+-src/app/connexion/connexion.component.spec.ts,0/2/025dcd0f23c8ff033ffc1b9aa228d226f3bd226a
+Z
+*src/app/connexion/connexion.component.html,1/c/1c47c4ea115bf328fe32c8e78ef81817b3304d71
+X
+(src/app/connexion/connexion.component.ts,3/c/3c7485aa779820b60d901ccb4d83364562fede28
+P
+ src/app/home/home.component.html,e/9/e933d99512b1bbc369b551f5b0f3431ed8fc131b
+Y
+)src/app/connexion/connexion.component.css,0/d/0de95d31e7ccc76491129e0dcc66b067bbe4b2bb
+O
+src/app/home/home.component.css,5/0/50e8f310a30206859a0ff639ed91120cb25f19a8
