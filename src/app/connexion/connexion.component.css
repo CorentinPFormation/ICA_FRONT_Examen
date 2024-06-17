@@ -1,10 +1,6 @@
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   color: #9FADBC;
   margin: 0;
-}
-
-.connexion-image {
-  display: none;
 }
 
 .logo-form {
@@ -13,8 +9,46 @@ h1, h2, h3, h4, h5, h6 {
 
 .connexion-form {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+mat-form-field {
+  width: 260px;
+}
+
+.submit-connexion {
+  background-color: #579DFF;
+  font-family: Ubuntu;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 16px;
+  width: 260px;
+}
+
+.submit-connexion:hover {
+  background-color: #80b5ff;
+}
+
+.connexion-image {
+  display: none;
+}
+
+@media (min-width: 440px) {
+  .connexion-image {
+    display: block;
+  }
+
+  .search-form {
+    margin-left: 55px;
+  }
 }
 
 /*------------------switch start------------------*/

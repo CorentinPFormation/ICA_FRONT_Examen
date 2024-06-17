@@ -1,10 +1,42 @@
-<img class="connexion-image" src="connexion.png">
-
 <div class="connexion-form">
 
+  <img class="connexion-image" src="connexion.png">
+
+  <form class="search-form">
   <img class="logo-form" src="logo.png">
-  <h3>Veuillez vous connectez avec votre compte</h3>
-  <h3>Yooz</h3>
+  <h3>Veuillez vous connectez avec votre compte Yooz</h3>
+    <mat-form-field appearance="outline">
+      <mat-label>Entrez votre email</mat-label>
+      <input matInput
+             placeholder="nom.utilisateur@getyooz.com"
+             [formControl]="email"
+             (blur)="updateErrorMessage()"
+             required>
+      @if (email.invalid) {
+        <mat-error>{{errorMessage}}</mat-error>
+      }
+    </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Saisissez votre mot de passe</mat-label>
+        <input matInput [type]="hide() ? 'password' : 'text'" required/>
+        <!--<button
+          mat-icon-button
+          matSuffix
+          (click)="clickEvent($event)"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()"
+        >
+          <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>-->
+      </mat-form-field>
+
+    <button type="submit" class="submit-connexion">Se connecter</button>
+
+    <br><p>Ou</p>
+
+    <p>( mettre la connexion microsoft )</p>
+  </form>
 
 
 </div>
