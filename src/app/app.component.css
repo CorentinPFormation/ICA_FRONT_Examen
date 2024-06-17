@@ -1,0 +1,145 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #1D2125;
+  color: #9FADBC;
+  font-family: Ubuntu;
+}
+
+button {
+  font-family: Ubuntu;
+}
+
+.line{
+  display:block;
+  width:100%;
+  border-top: 1px solid #ccc;
+  border-color: #9FADBC;
+  margin-top: 10px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.specbutton {
+  background-color: #579DFF;
+  border: none;
+  border-radius: 5px;
+  width: 175px;
+  height: 25px;
+  font-size: 15px;
+}
+
+.specbutton:hover {
+  background-color: #80b5ff;
+}
+
+.spec {
+  text-decoration: none;
+  color: #9FADBC;
+  border-radius: 5px;
+}
+
+.spec:hover {
+  background-color: #333C43;
+}
+
+.imgheader {
+  width: 54px;
+}
+
+.settingssvg {
+  display: flex;
+  color: #9FADBC;
+}
+
+.imgheader:hover, .settingssvg:hover {
+  border-radius: 5px;
+  background-color: #333C43;
+}
+
+.burger, .imgheader, .spec, .specbutton {
+  margin-right: 20px;
+}
+
+.spec, .specbutton {
+  display: none;
+}
+
+@media (min-width: 440px) {
+  .spec, .specbutton {
+    display: block;
+  }
+}
+
+/*--------------------------------------boutton burger début--------------------------------------*/
+
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #9FADBC;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+@media (min-width: 440px) {
+  .burger {
+    display: none;
+  }
+}
+
+/*--------------------------------------boutton burger fin--------------------------------------*/

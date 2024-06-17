@@ -19,3 +19,27 @@ E
 src/index.html,5/c/5c975582791da6f060261188096d6aad85db6e09
 J
 src/app/app.component.html,0/6/06895b2dfff011115a8eded7e3fad29788965566
+>
+src/styles.css,6/f/6f9d98ca6b2005fc0cd4b0f000b670b16bf3c496
+I
+src/app/app.component.css,5/5/553209eb77976ca7cea08bc999bbd55a69ad0336
+C
+public/settings.svg,d/3/d3d3cdfa3d244b6c3e727ac3eb4eed782b6c26d8
+]
+-src/app/connexion/connexion.component.spec.ts,0/2/025dcd0f23c8ff033ffc1b9aa228d226f3bd226a
+Z
+*src/app/connexion/connexion.component.html,1/c/1c47c4ea115bf328fe32c8e78ef81817b3304d71
+X
+(src/app/connexion/connexion.component.ts,3/c/3c7485aa779820b60d901ccb4d83364562fede28
+P
+ src/app/home/home.component.html,e/9/e933d99512b1bbc369b551f5b0f3431ed8fc131b
+Y
+)src/app/connexion/connexion.component.css,0/d/0de95d31e7ccc76491129e0dcc66b067bbe4b2bb
+O
+src/app/home/home.component.css,5/0/50e8f310a30206859a0ff639ed91120cb25f19a8
+d
+4src/app/page-not-found/page-not-found.component.html,2/5/255de489648ec20e8809ff8aa1e76165cbffc174
+c
+3src/app/page-not-found/page-not-found.component.css,e/b/eb0178e9180dc85ec8905815168b439d0e9a1305
+<
+angular.json,e/9/e92338c6e49ff34f9022980cc89bbebd60974bad
