@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 body {
   background-color: #1D2125;
   color: #9FADBC;
@@ -30,6 +29,7 @@ button {
   width: 175px;
   height: 25px;
   font-size: 15px;
+  margin: 0 !important;
 }
 
 .specbutton:hover {
@@ -48,11 +48,13 @@ button {
 
 .imgheader {
   width: 54px;
+  margin: 0 !important;
 }
 
 .settingssvg {
   display: flex;
   color: #9FADBC;
+  margin: 0 !important;
 }
 
 .imgheader:hover, .settingssvg:hover {
@@ -60,17 +62,79 @@ button {
   background-color: #333C43;
 }
 
-.burger, .imgheader, .spec, .specbutton {
-  margin-right: 20px;
-}
-
 .spec, .specbutton {
   display: none;
+}
+
+.header > div {
+  border-radius: 5px;
+  color: #333c43;
+}
+
+.header {
+  max-width: 440px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(25px, auto);
+}
+
+.burger-icon {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.logoheader {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.settings {
+  grid-column: 11;
+  grid-row: 1;
+}
+
+.profil {
+  grid-column: 12;
+  grid-row: 1;
 }
 
 @media (min-width: 440px) {
   .spec, .specbutton {
     display: block;
+  }
+
+  .header {
+    max-width: 1920px;
+    grid-template-columns: repeat(52, 6fr);
+    margin: 0;
+    grid-auto-rows: minmax(0px, auto);
+  }
+
+  .logoheader {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .spech {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .creer {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .settings {
+    grid-column: 51;
+    grid-row: 1;
+  }
+
+  .profil {
+    grid-column: 52;
+    grid-row: 1;
   }
 }
 
