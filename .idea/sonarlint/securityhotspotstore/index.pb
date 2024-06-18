@@ -43,3 +43,15 @@ c
 3src/app/page-not-found/page-not-found.component.css,e/b/eb0178e9180dc85ec8905815168b439d0e9a1305
 <
 angular.json,e/9/e92338c6e49ff34f9022980cc89bbebd60974bad
+N
+src/app/home/home.component.ts,8/6/86792ff6839bbf45b8e8331bc49d3712dc36eba9
+f
+6src/app/home-spec-pop-up/home-spec-pop-up.component.ts,f/f/ff0cc69205adaa7bef8c3a4ce1ccdafe432a38a6
+h
+8src/app/home-spec-pop-up/home-spec-pop-up.component.html,6/7/679e95b5081378826673a0050e562b514e4ea253
+g
+7src/app/home-spec-pop-up/home-spec-pop-up.component.css,4/c/4c405af4710dabf35acba1ee70d23b84a4da8655
+?
+public/cloe.svg,3/3/339778474f48554688aef0d795c7b6bfb43272c5
+@
+public/close.svg,6/d/6d2a4c897f9c805660d29d1da99a76ce7949d59e
