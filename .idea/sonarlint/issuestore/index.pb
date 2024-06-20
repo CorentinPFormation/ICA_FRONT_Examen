@@ -51,7 +51,9 @@ h
 8src/app/home-spec-pop-up/home-spec-pop-up.component.html,6/7/679e95b5081378826673a0050e562b514e4ea253
 g
 7src/app/home-spec-pop-up/home-spec-pop-up.component.css,4/c/4c405af4710dabf35acba1ee70d23b84a4da8655
-?
-public/cloe.svg,3/3/339778474f48554688aef0d795c7b6bfb43272c5
 @
 public/close.svg,6/d/6d2a4c897f9c805660d29d1da99a76ce7949d59e
+>
+public/bug.svg,a/f/afc625efa708c72c974b80bed7800036f445b1d8
+A
+public/logout.svg,9/d/9dd0ff3d423295b88588ade9507e391658bdbd4c

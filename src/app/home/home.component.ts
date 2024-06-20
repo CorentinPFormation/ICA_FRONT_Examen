@@ -1,8 +1,6 @@
 import {Component, inject} from '@angular/core';
-import {
-  MatDialog,
-} from '@angular/material/dialog';
-import {HomeSpecPopUpComponent} from '../home-spec-pop-up/home-spec-pop-up.component';
+import { MatDialog } from '@angular/material/dialog';
+import { HomeSpecPopUpComponent } from '../home-spec-pop-up/home-spec-pop-up.component';
 
 @Component({
   selector: 'app-home',

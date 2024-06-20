@@ -4,6 +4,14 @@ body {
   font-family: Ubuntu;
 }
 
+* {
+  text-decoration: none;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
 button {
   font-family: Ubuntu;
 }
@@ -14,6 +22,10 @@ button {
   border-top: 1px solid #ccc;
   border-color: #9FADBC;
   margin-top: 10px;
+}
+
+.profiline {
+  margin-top: 0px !important;
 }
 
 .header {
@@ -36,10 +48,13 @@ button {
   background-color: #80b5ff;
 }
 
+.bugsvg {
+  display: flex;
+}
+
 .spec {
   text-decoration: none;
   color: #9FADBC;
-  border-radius: 5px;
 }
 
 .spec:hover {
@@ -47,6 +62,7 @@ button {
 }
 
 .imgheader {
+  display: flex;
   width: 54px;
   margin: 0 !important;
 }
@@ -57,7 +73,12 @@ button {
   margin: 0 !important;
 }
 
-.imgheader:hover, .settingssvg:hover {
+.profillogo {
+  background-color: transparent;
+  border: none;
+}
+
+.imgheader:hover, .settingssvg:hover, .bugsvg:hover, .spec:hover, .logout:hover, .profilmenu:hover {
   border-radius: 5px;
   background-color: #333C43;
 }
@@ -65,6 +86,19 @@ button {
 .spec, .specbutton {
   display: none;
 }
+
+.logout {
+  display: flex;
+  align-items: center;
+}
+
+.logoutp, .logoutlogo {
+  margin: 0px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+/*--------------------------------------------header grid debut--------------------------------------------*/
 
 .header > div {
   border-radius: 5px;
@@ -76,7 +110,7 @@ button {
   margin: 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 10px;
+  grid-gap: 15px;
   grid-auto-rows: minmax(25px, auto);
 }
 
@@ -90,6 +124,11 @@ button {
   grid-row: 1;
 }
 
+.bug {
+  grid-column: 10;
+  grid-row: 1;
+}
+
 .settings {
   grid-column: 11;
   grid-row: 1;
@@ -99,6 +138,7 @@ button {
   grid-column: 12;
   grid-row: 1;
 }
+
 
 @media (min-width: 440px) {
   .spec, .specbutton {
@@ -127,6 +167,11 @@ button {
     grid-row: 1;
   }
 
+  .bug {
+    grid-column: 50;
+    grid-row: 1;
+  }
+
   .settings {
     grid-column: 51;
     grid-row: 1;
@@ -137,6 +182,36 @@ button {
     grid-row: 1;
   }
 }
+
+/*--------------------------------------------header grid fin--------------------------------------------*/
+
+/*--------------------------------------------profil menu grid debut--------------------------------------------*/
+
+.profilmenu > div {
+  border-radius: 5px;
+  color: #333c43;
+}
+
+.profilmenu {
+  max-width: 440px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  grid-auto-rows: minmax(25px, auto);
+}
+
+.menu1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.menu2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/*--------------------------------------------profil menu grid fin--------------------------------------------*/
 
 /*--------------------------------------boutton burger début--------------------------------------*/
 

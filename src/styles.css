@@ -4,6 +4,14 @@ body {
     font-family: Ubuntu !important;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  color: #9fadbc;
+}
+
+button, a {
+  cursor: pointer;
+}
+
 /*-----------------------------------------------------------ANGULAR MODULE CSS-----------------------------------------------------------*/
 
 .mat-ripple {
@@ -599,14 +607,14 @@ html {
     --mat-menu-item-icon-color: #44474e;
     --mat-menu-item-hover-state-layer-color: rgba(26, 27, 31, 0.08);
     --mat-menu-item-focus-state-layer-color: rgba(26, 27, 31, 0.12);
-    --mat-menu-container-color: #efedf1;
+    --mat-menu-container-color: #282f34;
     --mat-menu-divider-color: #333c43;
     --mat-menu-item-label-text-font: Ubuntu, sans-serif;
     --mat-menu-item-label-text-size: 0.875rem;
     --mat-menu-item-label-text-tracking: 0.006rem;
     --mat-menu-item-label-text-line-height: 1.25rem;
     --mat-menu-item-label-text-weight: 500;
-    --mat-menu-container-shape: 4px;
+    --mat-menu-container-shape: 10px;
     --mat-menu-divider-bottom-spacing: 8px;
     --mat-menu-divider-top-spacing: 8px;
     --mat-menu-item-spacing: 12px;
@@ -1493,6 +1501,10 @@ html {
 .mat-label-small, .mat-typography .mat-label-small {
     font: 500 .688rem / 1rem Ubuntu, sans-serif;
     letter-spacing: .031rem
+}
+
+.mat-mdc-menu-content {
+  padding-bottom: 0px !important;
 }
 
 @media (min-width: 440px) {

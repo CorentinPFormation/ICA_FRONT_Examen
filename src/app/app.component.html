@@ -16,8 +16,15 @@
     <div class="spech"><a href="" class="spec">Vos&nbsp;spec</a></div>
     <div class="creer"><button class="specbutton">Créer une spécification</button></div>
 
-      <div class="settings">
+    <div class="bug">
+      <a href="mailto:corentin.paulet@getyooz.com">
+        <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px" fill="#9FADBC" class="bugsvg">
+          <path d="M480-200q66 0 113-47t47-113v-160q0-66-47-113t-113-47q-66 0-113 47t-47 113v160q0 66 47 113t113 47Zm-80-120h160v-80H400v80Zm0-160h160v-80H400v80Zm80 40Zm0 320q-65 0-120.5-32T272-240H160v-80h84q-3-20-3.5-40t-.5-40h-80v-80h80q0-20 .5-40t3.5-40h-84v-80h112q14-23 31.5-43t40.5-35l-64-66 56-56 86 86q28-9 57-9t57 9l88-86 56 56-66 66q23 15 41.5 34.5T688-640h112v80h-84q3 20 3.5 40t.5 40h80v80h-80q0 20-.5 40t-3.5 40h84v80H688q-32 56-87.5 88T480-120Z"/>
+        </svg>
+      </a>
+    </div>
 
+      <div class="settings">
         <a href="">
 
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="settingssvg" viewBox="0 0 16 16">
@@ -25,13 +32,36 @@
           </svg>
 
         </a>
-
       </div>
 
       <div class="profil">
+        <button class="profillogo" [matMenuTriggerFor]="menu"><img src="recup la pp microsoft du user et l'afficher ici"></button>
+        <mat-menu #menu="matMenu" class="toto132">
 
-        <a href=""><img src="recup la pp microsoft du user et l'afficher ici"></a>
+          <div class="profilmenu">
 
+            <div class="menu1"><a href="javascript:void(0);"><img src="recup la pp microsoft du user et l'afficher ici"></a></div>
+            <div class="menu2">
+              <a href="javascript:void(0);">
+                <h2>nom.utilisateur</h2>
+                <p>nom.utilisateur&commat;getyooz.com</p>
+              </a>
+            </div>
+
+          </div>
+
+          <span class="line profiline"></span>
+
+          <a>
+              <div class="logout">
+                <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#9FADBC" class="logoutlogo">
+                  <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
+                </svg>
+                <p class="logoutp">Déconnexion</p>
+              </div>
+          </a>
+
+        </mat-menu>
       </div>
 
     </div>
