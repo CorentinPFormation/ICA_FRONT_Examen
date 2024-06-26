@@ -1,14 +1,10 @@
-.speccard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 250px; /*a changer de methode plus tard pour le centrer*/
-  background-color: #333C43;
-  border-radius: 5px;
+* {
+  box-sizing: border-box;
 }
 
 .specp {
-  text-decoration: none;
+  display: flex;
+  justify-content: center;
   color: #9FADBC;
 }
 
@@ -16,4 +12,42 @@
   width: 300px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.specp, .hookspecimg {
+
+}
+
+.speccard > a {
+  border-radius: 5px;
+  background-color: #333c43;
+  color: #333c43;
+}
+
+.speccard {
+  max-width: 440px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 6fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(25px, auto);
+}
+
+.cardone {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+@media (min-width: 440px) {
+  .speccard {
+    max-width: 1920px;
+    grid-template-columns: repeat(12, 6fr);
+    margin: 0;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .cardone {
+    grid-column: 6;
+    grid-row: 3;
+  }
+
 }

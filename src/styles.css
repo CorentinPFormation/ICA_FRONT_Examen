@@ -4,6 +4,14 @@ body {
     font-family: Ubuntu !important;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  color: #9fadbc;
+}
+
+button, a {
+  cursor: pointer;
+}
+
 /*-----------------------------------------------------------ANGULAR MODULE CSS-----------------------------------------------------------*/
 
 .mat-ripple {
@@ -235,11 +243,11 @@ html {
     --mat-app-background-color: #fdfbff;
     --mat-app-text-color: #1a1b1f;
     --mat-ripple-color: rgba(26, 27, 31, 0.1);
-    --mat-option-selected-state-label-text-color: #131c2b;
-    --mat-option-label-text-color: #1a1b1f;
-    --mat-option-hover-state-layer-color: rgba(26, 27, 31, 0.08);
-    --mat-option-focus-state-layer-color: rgba(26, 27, 31, 0.12);
-    --mat-option-selected-state-layer-color: #dae2f9;
+    --mat-option-selected-state-label-text-color: #9fadbc;
+    --mat-option-label-text-color: #9FADBC;
+    --mat-option-hover-state-layer-color: rgba(26, 27, 31, 0.25);
+    --mat-option-focus-state-layer-color: rgba(26, 27, 31, 0);
+    --mat-option-selected-state-layer-color: rgba(26, 27, 31, 0.25);
     --mat-option-label-text-font: Ubuntu, sans-serif;
     --mat-option-label-text-line-height: 1.25rem;
     --mat-option-label-text-size: 1rem;
@@ -369,8 +377,8 @@ html {
     --mat-form-field-filled-with-label-container-padding-top: 24px;
     --mat-form-field-filled-with-label-container-padding-bottom: 8px;
     --mat-form-field-focus-state-layer-opacity: 0;
-    --mat-select-panel-background-color: #efedf1;
-    --mat-select-enabled-trigger-text-color: #1a1b1f;
+    --mat-select-panel-background-color: #333c43;
+    --mat-select-enabled-trigger-text-color: #9fadbc;
     --mat-select-disabled-trigger-text-color: rgba(26, 27, 31, 0.38);
     --mat-select-placeholder-text-color: #44474e;
     --mat-select-enabled-arrow-color: #44474e;
@@ -387,7 +395,7 @@ html {
     --mat-autocomplete-background-color: #efedf1;
     --mat-autocomplete-container-shape: 4px;
     --mat-autocomplete-container-elevation-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-    --mdc-dialog-container-color: #fdfbff;
+    --mdc-dialog-container-color: #1C2B41;
     --mdc-dialog-subhead-color: #1a1b1f;
     --mdc-dialog-supporting-text-color: #44474e;
     --mdc-dialog-subhead-font: Ubuntu, sans-serif;
@@ -400,11 +408,11 @@ html {
     --mdc-dialog-supporting-text-size: 0.875rem;
     --mdc-dialog-supporting-text-weight: 400;
     --mdc-dialog-supporting-text-tracking: 0.016rem;
-    --mdc-dialog-container-shape: 28px;
+    --mdc-dialog-container-shape: 15px;
     --mat-dialog-container-elevation-shadow: none;
     --mat-dialog-container-max-width: 560px;
     --mat-dialog-container-small-max-width: calc(100vw - 32px);
-    --mat-dialog-container-min-width: 280px;
+    --mat-dialog-container-min-width: 375px;
     --mat-dialog-actions-alignment: flex-end;
     --mat-dialog-actions-padding: 16px 24px;
     --mat-dialog-content-padding: 20px 24px;
@@ -599,14 +607,14 @@ html {
     --mat-menu-item-icon-color: #44474e;
     --mat-menu-item-hover-state-layer-color: rgba(26, 27, 31, 0.08);
     --mat-menu-item-focus-state-layer-color: rgba(26, 27, 31, 0.12);
-    --mat-menu-container-color: #efedf1;
+    --mat-menu-container-color: #282f34;
     --mat-menu-divider-color: #333c43;
     --mat-menu-item-label-text-font: Ubuntu, sans-serif;
     --mat-menu-item-label-text-size: 0.875rem;
     --mat-menu-item-label-text-tracking: 0.006rem;
     --mat-menu-item-label-text-line-height: 1.25rem;
     --mat-menu-item-label-text-weight: 500;
-    --mat-menu-container-shape: 4px;
+    --mat-menu-container-shape: 10px;
     --mat-menu-divider-bottom-spacing: 8px;
     --mat-menu-divider-top-spacing: 8px;
     --mat-menu-item-spacing: 12px;
@@ -1493,4 +1501,14 @@ html {
 .mat-label-small, .mat-typography .mat-label-small {
     font: 500 .688rem / 1rem Ubuntu, sans-serif;
     letter-spacing: .031rem
+}
+
+.mat-mdc-menu-content {
+  padding-bottom: 0px !important;
+}
+
+@media (min-width: 440px) {
+  html {
+    --mat-dialog-container-min-width: 1000px;
+  }
 }

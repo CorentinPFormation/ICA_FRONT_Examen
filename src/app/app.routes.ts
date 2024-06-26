@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {HookFormComponent} from './hook-form/hook-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
@@ -10,5 +11,6 @@ export const routes: Routes = [
   * pareil pour l'invrse si utilisater deja connecté mais va sur ica.com/connexion, rediriger vers ica.com/home */
   { path: 'home', component: HomeComponent },
   { path: 'connexion', component: ConnexionComponent },
+  { path: 'new-hook', component: HookFormComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
