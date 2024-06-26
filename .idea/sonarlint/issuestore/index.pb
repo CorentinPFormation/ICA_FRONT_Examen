@@ -57,3 +57,9 @@ g
 public/bug.svg,a/f/afc625efa708c72c974b80bed7800036f445b1d8
 A
 public/logout.svg,9/d/9dd0ff3d423295b88588ade9507e391658bdbd4c
+Z
+*src/app/hook-form/hook-form.component.html,0/5/057a2a6de9e22f929f284602764c76b04d05b738
+Y
+)src/app/hook-form/hook-form.component.css,1/a/1a1c8cfdfbeb6bcb6d3742fc9687de40f110eed2
+X
+(src/app/hook-form/hook-form.component.ts,4/f/4fb15eecea3dacdb22ed8cab3fb6d4088650380b

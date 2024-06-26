@@ -243,11 +243,11 @@ html {
     --mat-app-background-color: #fdfbff;
     --mat-app-text-color: #1a1b1f;
     --mat-ripple-color: rgba(26, 27, 31, 0.1);
-    --mat-option-selected-state-label-text-color: #131c2b;
-    --mat-option-label-text-color: #1a1b1f;
-    --mat-option-hover-state-layer-color: rgba(26, 27, 31, 0.08);
-    --mat-option-focus-state-layer-color: rgba(26, 27, 31, 0.12);
-    --mat-option-selected-state-layer-color: #dae2f9;
+    --mat-option-selected-state-label-text-color: #9fadbc;
+    --mat-option-label-text-color: #9FADBC;
+    --mat-option-hover-state-layer-color: rgba(26, 27, 31, 0.25);
+    --mat-option-focus-state-layer-color: rgba(26, 27, 31, 0);
+    --mat-option-selected-state-layer-color: rgba(26, 27, 31, 0.25);
     --mat-option-label-text-font: Ubuntu, sans-serif;
     --mat-option-label-text-line-height: 1.25rem;
     --mat-option-label-text-size: 1rem;
@@ -377,8 +377,8 @@ html {
     --mat-form-field-filled-with-label-container-padding-top: 24px;
     --mat-form-field-filled-with-label-container-padding-bottom: 8px;
     --mat-form-field-focus-state-layer-opacity: 0;
-    --mat-select-panel-background-color: #efedf1;
-    --mat-select-enabled-trigger-text-color: #1a1b1f;
+    --mat-select-panel-background-color: #333c43;
+    --mat-select-enabled-trigger-text-color: #9fadbc;
     --mat-select-disabled-trigger-text-color: rgba(26, 27, 31, 0.38);
     --mat-select-placeholder-text-color: #44474e;
     --mat-select-enabled-arrow-color: #44474e;
