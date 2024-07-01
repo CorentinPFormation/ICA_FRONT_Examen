@@ -6,6 +6,7 @@ body {
 
 * {
   text-decoration: none;
+  color: #9fadbc;
 }
 
 h2 {
@@ -126,8 +127,7 @@ button {
 }
 
 .bug {
-  grid-column: 10;
-  grid-row: 1;
+  display: none;
 }
 
 .settings {
@@ -169,6 +169,7 @@ button {
   }
 
   .bug {
+    display: block;
     grid-column: 50;
     grid-row: 1;
   }
@@ -217,6 +218,7 @@ button {
 /*--------------------------------------boutton burger début--------------------------------------*/
 
 .burger {
+  z-index: 999;
   position: relative;
   width: 40px;
   height: 30px;
@@ -283,3 +285,69 @@ button {
 }
 
 /*--------------------------------------boutton burger fin--------------------------------------*/
+
+
+/*--------------------------------------menu burger debut--------------------------------------*/
+
+.menu {
+  position: fixed;
+  z-index: 998;
+  background-color: #1D2125;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 75px;
+  border-radius: 1px;
+  box-shadow: 0px 0px 0px 75px rgba(0,0,0,0.5);
+}
+
+.menu > div > a > div {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.acceuilMenu, .specMenu, .bugMenu {
+  background-color: #333C43;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.menu > div {
+  border-radius: 5px;
+  color: #333c43;
+}
+
+.menu {
+  max-width: 440px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  grid-gap: 15px;
+  grid-auto-rows: minmax(25px, auto);
+}
+
+.acceuilMenu{
+  grid-row: 2;
+}
+
+.specMenu {
+  grid-row: 3;
+}
+
+.createSpecMenu {
+  grid-row: 4;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #579DFF;
+}
+
+.createSpecMenu > a > div {
+  color: black;
+}
+
+.bugMenu {
+  grid-row: 19;
+}
+
+/*--------------------------------------menu burger fin--------------------------------------*/

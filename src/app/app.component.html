@@ -2,9 +2,47 @@
 
   <div class="header">
 
-    <div class="burger-icon">
+    <div id="myMenu" class="menu" [ngStyle]="{'display': isMenu ? 'grid' : 'none'}">
+
+      <div class="acceuilMenu">
+        <a href="javascript:void(0)">
+          <div>
+            Acceuil
+          </div>
+        </a>
+      </div>
+
+      <div class="specMenu">
+        <a href="javascript:void(0)">
+          <div>
+            Vos spec
+          </div>
+        </a>
+      </div>
+
+      <div class="createSpecMenu">
+        <a href="javascript:void(0)">
+          <div>
+            Créer une spécification
+          </div>
+        </a>
+      </div>
+
+      <div class="bugMenu">
+        <a href="javascript:void(0)">
+          <div>
+            Report un bug
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-------------------------------------------------------------------------------------------------------->
+
+    <div id="openBtn" class="burger-icon">
       <label class="burger" for="burger">
-        <input type="checkbox" id="burger">
+        <input type="checkbox" id="burger" #burger (change)="toggleMenu()">
           <span></span>
           <span></span>
           <span></span>
