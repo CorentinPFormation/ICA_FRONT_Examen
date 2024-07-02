@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {HookFormComponent} from './hook-form/hook-form.component';
+import {SpecComponent} from './spec/spec.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
@@ -12,5 +13,6 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'new-hook', component: HookFormComponent },
+  { path: 'spec', component: SpecComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

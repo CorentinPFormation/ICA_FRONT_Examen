@@ -69,3 +69,9 @@ X
 public/menu.svg,5/c/5cd9fd4b56116160b45640e668dca184aa54b47e
 C
 .vscode/launch.json,f/1/f14cb12fa7462cdba1e6e6e4b499bce722fe22ba
+P
+ src/app/spec/spec.component.html,0/5/05755fcd9000647a91344cf803664b38442617dd
+O
+src/app/spec/spec.component.css,b/b/bb50f488121d9e663ad13165c110b22d2c5dcce7
+N
+src/app/spec/spec.component.ts,a/9/a9c65347e43cf31233d763a222a162921cb7e633
