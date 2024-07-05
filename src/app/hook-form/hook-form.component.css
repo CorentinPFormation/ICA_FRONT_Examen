@@ -45,9 +45,23 @@
   background-color: #40dec6;
 }
 
-.generate {
-  background-color: #579DFF;
+.preview {
   margin-left: 4px;
+  color: #9fadbc;
+  background-color: #333c43;
+}
+
+.preview:hover {
+  background-color: #46525b;
+}
+
+.generate {
+  width: 364px;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #579DFF;
 }
 
 .generate:hover {
@@ -110,6 +124,20 @@
   grid-row: 8;
 }
 
+.button2 {
+  grid-column: 2;
+  grid-row: 9;
+}
+
+.generate {
+  width: 364px;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #579DFF;
+}
+
 @media (min-width: 440px) {
   .hookform {
     max-width: 1920px;
@@ -165,6 +193,14 @@
   }
 
   .button {
+    grid-column: 4;
+    grid-row: 3;
+    margin-top: 210px;
+    margin-left: 60px;
+    margin-bottom: 65px;
+  }
+
+  .button2 {
     grid-column: 4;
     grid-row: 3;
     margin-top: 275px;
