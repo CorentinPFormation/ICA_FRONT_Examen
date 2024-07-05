@@ -1,0 +1,6 @@
+h1, h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #9FADBC;
+}

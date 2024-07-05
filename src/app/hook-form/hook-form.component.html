@@ -1,0 +1,216 @@
+<form class="hookform">
+
+  <div class="document-type">
+    <h2>Type(s) de document</h2>
+    <div><p>Commande</p>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label></div>
+
+    <div><p>Demande d'achat</p>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label></div>
+
+    <div><p>Facture d'achat</p>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label></div>
+
+    <div><p>Avoir d'achat</p>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label></div>
+
+    <div><p>Facture de vente</p>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label></div>
+
+    <div><p>Avoir de vente</p>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label></div>
+
+    <div><p>Facture sur commande</p>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+      </label></div>
+
+    <div><p>Autre document</p>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label></div>
+
+  </div>
+
+  <div class="hook-name">
+    <h2>Nom du hook</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Français FR</mat-label>
+      <input matInput required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>English EN</mat-label>
+      <input matInput required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>English US</mat-label>
+      <input matInput required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Espagnol ES</mat-label>
+      <input matInput required>
+    </mat-form-field>
+  </div>
+
+  <div class="description-hook">
+    <h2>Description du hook</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Français FR</mat-label>
+      <textarea matInput required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>English EN</mat-label>
+      <textarea matInput required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>English US</mat-label>
+      <textarea matInput required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Espagnol ES</mat-label>
+      <textarea matInput required></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="event">
+    <h2>Event</h2>
+
+    <div class="modification"><p>Modification d'un champ</p>
+    <label class="switch">
+      <input type="checkbox" #myCheck (change)="toggleTextVisibility()">
+      <span class="slider round"></span>
+    </label>
+    <p>Autre action</p></div>
+
+    <h2 [ngStyle]="{'display': isTextVisible ? 'none' : 'block'}">Modification de champ</h2>
+    <mat-form-field [ngStyle]="{'display': isTextVisible ? 'none' : 'block'}" appearance="outline">
+      <mat-label>Nom du champ</mat-label>
+      <input matInput placeholder="Ex. Champ perso 1">
+    </mat-form-field>
+
+    <mat-form-field [ngStyle]="{'display': isTextVisible ? 'none' : 'block'}" appearance="outline">
+      <mat-label>Position</mat-label>
+      <input matInput placeholder="Ex. Invoice line">
+    </mat-form-field>
+
+    <h2 [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}">Autre action</h2>
+    <mat-form-field id="text" [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}" appearance="outline">
+      <mat-label>Veuillez choisir une action</mat-label>
+      <mat-select>
+        <mat-option value="1">soit je met les données en dur soit je *ngFor</mat-option>
+        <mat-option value="1">un</mat-option>
+        <mat-option value="1">deux</mat-option>
+        <mat-option value="1">trois</mat-option>
+        <mat-option value="1">quatre</mat-option>
+        <mat-option value="1">cinq</mat-option>
+        <mat-option value="1">six</mat-option>
+        <mat-option value="1">sept</mat-option>
+        <mat-option value="1">huit</mat-option>
+        <mat-option value="1">neuf</mat-option>
+        <mat-option value="1">dix</mat-option>
+        <mat-option value="1">onze</mat-option>
+        <mat-option value="1">douze</mat-option>
+        <mat-option value="1">treize</mat-option>
+        <mat-option value="1">quatorze</mat-option>
+        <mat-option value="1">quinze</mat-option>
+        <mat-option value="1">seixe</mat-option>
+        <mat-option value="1">dix-sept</mat-option>
+        <mat-option value="1">dix-huit</mat-option>
+        <mat-option value="1">dix-neuf</mat-option>
+        <mat-option value="1">vingt</mat-option>
+        <mat-option value="1">vingt et un</mat-option>
+        <mat-option value="1">vingt-deux</mat-option>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div class="processus">
+    <h2>Processus du hook</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Cas fonctionnel</mat-label>
+      <textarea matInput placeholder="Description du hook bien détaillé" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cas d'erreur</mat-label>
+      <textarea matInput placeholder="Mettre un ou plusieurs exemple(s) potentiel d'erreur bien détaillé" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Résultats attendus</mat-label>
+      <textarea matInput placeholder="Décrire précisement le résultat attendu" required></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="test">
+    <h2>Cas de tests</h2>
+    <p>Prise d'identité (selon les phases a tester)</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Utilisateur</mat-label>
+      <input matInput required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phase</mat-label>
+      <input matInput placeholder="Ex. Enregistrement" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Étape</mat-label>
+      <input matInput #etape maxlength="1" required>
+      <mat-hint align="end">{{etape.value.length}} / 1</mat-hint>
+    </mat-form-field>
+
+  </div>
+
+  <div class="cas-particulier">
+    <h2>Cas particulier (si il y en a)</h2>
+    <label class="switch" id="caspart">
+      <input type="checkbox" #check (change)="toggleCas()">
+      <span class="slider round"></span>
+    </label>
+
+    <mat-form-field id="text3" [ngStyle]="{'display': isCas ? 'block' : 'none'}" appearance="outline">
+      <mat-label>Cas particulier</mat-label>
+      <textarea matInput placeholder="Décrir précisement le résultats attendus"></textarea>
+    </mat-form-field>
+
+  </div>
+
+  <div class="button">
+    <button type="submit" class="save">Enregistrer la spécification</button>
+    <button type="submit" class="preview">Prévisualiser la spécification</button>
+  </div>
+
+  <div class="button2">
+    <button type="submit" class="generate">Générer la spécification</button>
+  </div>
+
+</form>

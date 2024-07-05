@@ -1,0 +1,348 @@
+body {
+  background-color: #1D2125;
+  color: #9FADBC;
+}
+
+* {
+  text-decoration: none;
+  color: #9fadbc;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+.line{
+  display:block;
+  width:100%;
+  border-top: 1px solid #9FADBC;
+  margin-top: 10px;
+}
+
+.profiline {
+  margin-top: 0px !important;
+}
+
+.specbutton {
+  background-color: #579DFF;
+  border: none;
+  border-radius: 5px;
+  width: 175px;
+  height: 25px;
+  font-size: 15px;
+  margin: 0 !important;
+  padding-left: 5px;
+}
+
+.specbutton:hover {
+  background-color: #80b5ff;
+}
+
+.bugsvg {
+  display: flex;
+}
+
+.spec {
+  text-decoration: none;
+  color: #9FADBC;
+}
+
+.spec:hover, .imgheader:hover {
+  border-radius: 5px;
+  background-color: #333C43;
+}
+
+.imgheader {
+  display: flex;
+  width: 54px;
+  margin: 0 !important;
+}
+
+.settingssvg {
+  display: flex;
+  color: #9FADBC;
+  margin: 0 !important;
+}
+
+.settingssvg:hover {
+  transform: rotate(-0.45turn);
+}
+
+.profillogo {
+  background-color: transparent;
+  border: none;
+}
+
+.spec, .specbutton {
+  display: none;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+}
+
+.logoutp, .logoutlogo {
+  margin: 0px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+/*--------------------------------------------header grid debut--------------------------------------------*/
+
+.header > div {
+  border-radius: 5px;
+  color: #333c43;
+}
+
+.header {
+  flex-direction: row;
+  align-items: center;
+  max-width: 440px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 15px;
+  grid-auto-rows: minmax(25px, auto);
+}
+
+.burger-icon {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.logoheader {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.bug {
+  display: none;
+}
+
+.settings {
+  grid-column: 11;
+  grid-row: 1;
+}
+
+.profil {
+  grid-column: 12;
+  grid-row: 1;
+}
+
+
+@media (min-width: 440px) {
+  .spec, .specbutton {
+    display: block;
+  }
+
+  .header {
+    max-width: 1920px;
+    grid-template-columns: repeat(52, 6fr);
+    margin: 0;
+    grid-auto-rows: minmax(0px, auto);
+  }
+
+  .logoheader {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .spech {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .creer {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .bug {
+    display: block;
+    grid-column: 50;
+    grid-row: 1;
+  }
+
+  .settings {
+    grid-column: 51;
+    grid-row: 1;
+  }
+
+  .profil {
+    grid-column: 52;
+    grid-row: 1;
+  }
+}
+
+/*--------------------------------------------header grid fin--------------------------------------------*/
+
+/*--------------------------------------------profil menu grid debut--------------------------------------------*/
+
+.profilmenu > div {
+  border-radius: 5px;
+  color: #333c43;
+}
+
+.profilmenu {
+  max-width: 440px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  grid-auto-rows: minmax(25px, auto);
+}
+
+.menu1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.menu2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/*--------------------------------------------profil menu grid fin--------------------------------------------*/
+
+/*--------------------------------------boutton burger début--------------------------------------*/
+
+.burger {
+  z-index: 999;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #9FADBC;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+@media (min-width: 440px) {
+  .burger {
+    display: none;
+  }
+}
+
+/*--------------------------------------boutton burger fin--------------------------------------*/
+
+
+/*--------------------------------------menu burger debut--------------------------------------*/
+
+.menu {
+  position: fixed;
+  z-index: 998;
+  background-color: #1D2125;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 75px;
+  border-radius: 1px;
+  box-shadow: 0px 0px 0px 75px rgba(0,0,0,0.5);
+}
+
+.menu > div > a > div {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.acceuilMenu, .specMenu, .bugMenu {
+  background-color: #333C43;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.menu > div {
+  border-radius: 5px;
+  color: #333c43;
+}
+
+.menu {
+  max-width: 440px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  grid-gap: 15px;
+  grid-auto-rows: minmax(25px, auto);
+}
+
+.acceuilMenu{
+  grid-row: 2;
+}
+
+.specMenu {
+  grid-row: 3;
+}
+
+.createSpecMenu {
+  grid-row: 4;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #579DFF;
+}
+
+.createSpecMenu > a > div, .specbutton {
+  color: black;
+}
+
+.bugMenu {
+  grid-row: 19;
+}
+
+.bugMenuSvg {
+  display: flex;
+}
+
+/*--------------------------------------menu burger fin--------------------------------------*/
