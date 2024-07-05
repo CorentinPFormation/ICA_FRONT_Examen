@@ -1,6 +1,12 @@
-h1, h2, h3, h4, h5, h6, p {
+h3 {
   color: #9FADBC;
-  margin: 0;
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-size: 1em;
+}
+
+.toto {
+  margin-top: 5px;
 }
 
 .logo-form {
@@ -11,6 +17,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .search-form {
@@ -47,7 +54,18 @@ mat-form-field {
   }
 
   .search-form {
-    margin-left: 55px;
+    margin-left: 60px;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 1.17em;
+  }
+
+  .connexion-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 
