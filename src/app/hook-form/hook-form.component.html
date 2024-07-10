@@ -122,7 +122,7 @@
     <h2 [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}">Autre action</h2>
     <mat-form-field id="text" [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}" appearance="outline">
       <mat-label>Veuillez choisir une action</mat-label>
-      <mat-select>
+      <mat-select multiple>
         <mat-option value="1">soit je met les données en dur soit je *ngFor</mat-option>
         <mat-option value="1">un</mat-option>
         <mat-option value="1">deux</mat-option>
