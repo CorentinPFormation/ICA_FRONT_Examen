@@ -204,6 +204,43 @@
 
   </div>
 
+  <div class="savespec">
+    <h2>Information a propos de la spec</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Client</mat-label>
+      <input type="text"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        @for (option of filteredOptions | async; track option) {
+          <mat-option [value]="option">{{option}}</mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom de la spec</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>ERP</mat-label>
+      <input type="text"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl1"
+             [matAutocomplete]="auto1">
+      <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+        @for (erpl of filteredOptions1 | async; track erpl) {
+          <mat-option [value]="erpl">{{erpl}}</mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+
+  </div>
+
   <div class="button">
     <button type="submit" class="save">Enregistrer la spécification</button>
     <button type="submit" class="preview">Prévisualiser la spécification</button>

@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {NavigationEnd, RouterOutlet} from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import {NgIf, NgStyle} from '@angular/common';
@@ -13,7 +13,7 @@ import {filter} from 'rxjs';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   @ViewChild('burger') burger!: ElementRef<HTMLInputElement>;
   isMenu: boolean = false;
@@ -25,7 +25,7 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
-  @Input() public ngOnInit(): void {
+  ngOnInit(): void {
 
     this.updateConnexion(this.router.url);
 
