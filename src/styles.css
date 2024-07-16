@@ -4,6 +4,7 @@ body {
 
 * {
   font-family: Ubuntu !important;
+  scrollbar-color: #9fadbc #1d2125;
 }
 
 h1, h2, h3, h4, h5, h6, p {
