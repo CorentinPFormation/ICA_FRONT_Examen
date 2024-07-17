@@ -1,10 +1,9 @@
 const knex = require('knex');
 const config = require('./knexfile');
 
-const environment = 'development';  // Assure-toi de tester le bon environnement
+const environment = 'staging';
 const connection = knex(config[environment]);
 
-// Test de la connexion
 connection.raw('SELECT 1')
   .then(() => {
     console.log('Connection réussie');
