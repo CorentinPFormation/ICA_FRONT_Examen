@@ -6,8 +6,5 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {provideHttpClient, withXsrfConfiguration} from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(withXsrfConfiguration({
-    cookieName: 'INTEROP_CUSTOM_APP_TOKEN',
-    headerName: 'Interop Custom App token',
-  }))]
+  providers: [provideRouter(routes), provideAnimationsAsync(), provideHttpClient(withXsrfConfiguration({}))]
 };

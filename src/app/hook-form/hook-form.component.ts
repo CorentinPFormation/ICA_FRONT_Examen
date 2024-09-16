@@ -77,9 +77,7 @@ export class HookFormComponent implements OnInit {
   events: any[] = [];
 
   toto() {
-    this.http.get('http://localhost:3000/events').pipe(
-      map((dataApi: any) => dataApi)
-    ).subscribe((data: any[]) => {
+    this.http.get('http://localhost:3000/events').pipe(map((dataApi: any) => dataApi)).subscribe((data: any[]) => {
       this.events = data;
     });
   }
