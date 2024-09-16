@@ -18,7 +18,7 @@
   margin-left: 15px;
 }
 
-.hook-name, .description-hook, .event, .processus, .test, .cas-particulier {
+.hook-name, .description-hook, .event, .processus, .test, .cas-particulier, .savespec {
   display: flex;
   flex-direction: column;
   flex-flow: column;
@@ -119,14 +119,19 @@
   grid-row: 7;
 }
 
-.button {
+.savespec {
   grid-column: 2;
   grid-row: 8;
 }
 
-.button2 {
+.button {
   grid-column: 2;
   grid-row: 9;
+}
+
+.button2 {
+  grid-column: 2;
+  grid-row: 10;
 }
 
 .generate {
@@ -190,6 +195,12 @@
   .cas-particulier {
     grid-column: 2;
     grid-row: 3;
+    margin-right: 25px;
+  }
+  .savespec {
+    grid-column: 3;
+    grid-row: 3;
+    margin-right: 25px;
   }
 
   .button {

@@ -1,9 +1,10 @@
-import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {NavigationEnd, RouterOutlet} from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import {NgIf, NgStyle} from '@angular/common';
 import {Router} from '@angular/router';
 import {filter} from 'rxjs';
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import {filter} from 'rxjs';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   @ViewChild('burger') burger!: ElementRef<HTMLInputElement>;
   isMenu: boolean = false;
@@ -23,9 +24,9 @@ export class AppComponent {
     this.isMenu = this.burger.nativeElement.checked;
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
-  @Input() public ngOnInit(): void {
+  ngOnInit(): void {
 
     this.updateConnexion(this.router.url);
 
@@ -38,6 +39,10 @@ export class AppComponent {
 
   private updateConnexion(url: string): void {
     this.connexion = url.startsWith('/connexion');
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }
