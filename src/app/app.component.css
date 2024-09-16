@@ -59,16 +59,6 @@ h2 {
   margin: 0 !important;
 }
 
-.settingssvg {
-  display: flex;
-  color: #9FADBC;
-  margin: 0 !important;
-}
-
-.settingssvg:hover {
-  transform: rotate(-0.45turn);
-}
-
 .profillogo {
   background-color: transparent;
   border: none;
@@ -121,11 +111,6 @@ h2 {
   display: none;
 }
 
-.settings {
-  grid-column: 11;
-  grid-row: 1;
-}
-
 .profil {
   grid-column: 12;
   grid-row: 1;
@@ -161,11 +146,6 @@ h2 {
 
   .bug {
     display: block;
-    grid-column: 50;
-    grid-row: 1;
-  }
-
-  .settings {
     grid-column: 51;
     grid-row: 1;
   }

@@ -122,31 +122,8 @@
     <h2 [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}">Autre action</h2>
     <mat-form-field id="text" [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}" appearance="outline">
       <mat-label>Veuillez choisir une action</mat-label>
-      <mat-select>
-        <mat-option value="1">soit je met les données en dur soit je *ngFor</mat-option>
-        <mat-option value="1">un</mat-option>
-        <mat-option value="1">deux</mat-option>
-        <mat-option value="1">trois</mat-option>
-        <mat-option value="1">quatre</mat-option>
-        <mat-option value="1">cinq</mat-option>
-        <mat-option value="1">six</mat-option>
-        <mat-option value="1">sept</mat-option>
-        <mat-option value="1">huit</mat-option>
-        <mat-option value="1">neuf</mat-option>
-        <mat-option value="1">dix</mat-option>
-        <mat-option value="1">onze</mat-option>
-        <mat-option value="1">douze</mat-option>
-        <mat-option value="1">treize</mat-option>
-        <mat-option value="1">quatorze</mat-option>
-        <mat-option value="1">quinze</mat-option>
-        <mat-option value="1">seixe</mat-option>
-        <mat-option value="1">dix-sept</mat-option>
-        <mat-option value="1">dix-huit</mat-option>
-        <mat-option value="1">dix-neuf</mat-option>
-        <mat-option value="1">vingt</mat-option>
-        <mat-option value="1">vingt et un</mat-option>
-        <mat-option value="1">vingt-deux</mat-option>
-        <mat-option></mat-option>
+      <mat-select multiple>
+        <mat-option *ngFor="let event of events" value="{{ event.id_events }}">{{ event.name }}</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -200,6 +177,43 @@
     <mat-form-field id="text3" [ngStyle]="{'display': isCas ? 'block' : 'none'}" appearance="outline">
       <mat-label>Cas particulier</mat-label>
       <textarea matInput placeholder="Décrir précisement le résultats attendus"></textarea>
+    </mat-form-field>
+
+  </div>
+
+  <div class="savespec">
+    <h2>Information a propos de la spec</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Client</mat-label>
+      <input type="text"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        @for (option of filteredOptions | async; track option) {
+          <mat-option [value]="option">{{option}}</mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom de la spec</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>ERP</mat-label>
+      <input type="text"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl1"
+             [matAutocomplete]="auto1">
+      <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+        @for (erpl of filteredOptions1 | async; track erpl) {
+          <mat-option [value]="erpl">{{erpl}}</mat-option>
+        }
+      </mat-autocomplete>
     </mat-form-field>
 
   </div>

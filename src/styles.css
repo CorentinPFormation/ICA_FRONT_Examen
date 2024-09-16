@@ -4,6 +4,7 @@ body {
 
 * {
   font-family: Ubuntu !important;
+  scrollbar-color: #9fadbc #1d2125;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -261,8 +262,8 @@ html {
     --mat-option-label-text-tracking: 0.006rem;
     --mat-option-label-text-weight: 400;
     --mat-full-pseudo-checkbox-selected-icon-color: #579dff;
-    --mat-full-pseudo-checkbox-selected-checkmark-color: #ffffff;
-    --mat-full-pseudo-checkbox-unselected-icon-color: #44474e;
+    --mat-full-pseudo-checkbox-selected-checkmark-color: black;
+    --mat-full-pseudo-checkbox-unselected-icon-color: #9fadbc;
     --mat-full-pseudo-checkbox-disabled-selected-checkmark-color: #fdfbff;
     --mat-full-pseudo-checkbox-disabled-unselected-icon-color: rgba(26, 27, 31, 0.38);
     --mat-full-pseudo-checkbox-disabled-selected-icon-color: rgba(26, 27, 31, 0.38);
@@ -399,8 +400,8 @@ html {
     --mat-select-trigger-text-weight: 400;
     --mat-select-arrow-transform: translateY(-8px);
     --mat-select-container-elevation-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-    --mat-autocomplete-background-color: #efedf1;
-    --mat-autocomplete-container-shape: 4px;
+    --mat-autocomplete-background-color: #333C43;
+    --mat-autocomplete-container-shape: 5px;
     --mat-autocomplete-container-elevation-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
     --mdc-dialog-container-color: #1C2B41;
     --mdc-dialog-subhead-color: #1a1b1f;

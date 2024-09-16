@@ -75,3 +75,7 @@ O
 src/app/spec/spec.component.css,b/b/bb50f488121d9e663ad13165c110b22d2c5dcce7
 N
 src/app/spec/spec.component.ts,a/9/a9c65347e43cf31233d763a222a162921cb7e633
+;
+knexfile.js,2/7/27364759f521fe7be16cb20ecbc5ef80335117b2
+E
+test_connection_db.js,2/9/295ac5015f99c139bd73380adc1d64f73eb9f77f

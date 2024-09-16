@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="!connexion">
 
   <div class="header">
 
@@ -29,7 +29,7 @@
       </div>
 
       <div class="bugMenu">
-        <a href="mailto:corentin.paulet@getyooz.com">
+        <a href="mailto:corentin.paulet@getyooz.com?subject=[bug]">
           <div class="bugMenuSvg">
             <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="25px" fill="#9FADBC" style="margin-right: 3px">
               <path d="M480-200q66 0 113-47t47-113v-160q0-66-47-113t-113-47q-66 0-113 47t-47 113v160q0 66 47 113t113 47Zm-80-120h160v-80H400v80Zm0-160h160v-80H400v80Zm80 40Zm0 320q-65 0-120.5-32T272-240H160v-80h84q-3-20-3.5-40t-.5-40h-80v-80h80q0-20 .5-40t3.5-40h-84v-80h112q14-23 31.5-43t40.5-35l-64-66 56-56 86 86q28-9 57-9t57 9l88-86 56 56-66 66q23 15 41.5 34.5T688-640h112v80h-84q3 20 3.5 40t.5 40h80v80h-80q0 20-.5 40t-3.5 40h84v80H688q-32 56-87.5 88T480-120Z"/>
@@ -65,16 +65,6 @@
       </a>
     </div>
 
-      <div class="settings">
-        <a href="">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="settingssvg" viewBox="0 0 16 16">
-          <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-          </svg>
-
-        </a>
-      </div>
-
       <div class="profil">
         <button class="profillogo" [matMenuTriggerFor]="menu"><img src="recup la pp microsoft du user et l'afficher ici"></button>
         <mat-menu #menu="matMenu">
@@ -94,7 +84,7 @@
           <span class="line profiline"></span>
 
           <a>
-              <div class="logout">
+              <div class="logout" (click)="logout()">
                 <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#9FADBC" class="logoutlogo">
                   <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
                 </svg>

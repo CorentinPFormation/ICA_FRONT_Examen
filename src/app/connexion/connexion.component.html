@@ -2,31 +2,27 @@
 
   <img class="connexion-image" src="connexion.png" alt="background image">
 
-  <form class="search-form">
-  <img class="logo-form" src="logo.png" alt="application logo">
-  <h3>Veuillez vous connectez avec votre compte Yooz</h3>
+  <form class="search-form" [formGroup]="loginForm">
+    <img class="logo-form" src="logo.png" alt="application logo">
+    <h3>Veuillez vous connectez avec votre compte Yooz</h3>
     <mat-form-field appearance="outline">
       <mat-label>Entrez votre email</mat-label>
       <input matInput
-             placeholder="nom.utilisateur@getyooz.com"
-             [formControl]="email"
+             placeholder="prenom.nom@getyooz.com"
+             formControlName="email"
              (blur)="updateErrorMessage()"
              required>
       @if (email.invalid) {
-        <mat-error>{{errorMessage}}</mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">Veuillez entrer un email valide</mat-error>
       }
     </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Saisissez votre mot de passe</mat-label>
-        <input matInput [type]="hide() ? 'password' : 'text'" required/>
-      </mat-form-field>
+    <mat-form-field appearance="outline" class="toto">
+      <mat-label>Saisissez votre mot de passe</mat-label>
+      <input matInput [type]="hide() ? 'password' : 'text'" formControlName="password" required/>
+    </mat-form-field>
 
-    <button type="submit" class="submit-connexion">Se connecter</button>
-
-    <br><p>Ou</p>
-
-    <p>( mettre la connexion microsoft )</p>
+    <button type="submit" class="submit-connexion" (click)="login()" formmethod="post">Se connecter</button>
   </form>
 
 
