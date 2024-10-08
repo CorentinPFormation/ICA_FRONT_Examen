@@ -1,15 +1,16 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {NavigationEnd, RouterOutlet} from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
-import {NgIf, NgStyle} from '@angular/common';
+import {NgForOf, NgIf, NgStyle} from '@angular/common';
 import {Router} from '@angular/router';
-import {filter} from 'rxjs';
+import {filter, map} from 'rxjs';
 import {AuthService} from './auth.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatMenuModule, NgStyle, NgIf],
+  imports: [RouterOutlet, MatMenuModule, NgStyle, NgIf, NgForOf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit{
     this.isMenu = this.burger.nativeElement.checked;
   }
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private http: HttpClient) { }
 
   ngOnInit(): void {
 
@@ -43,6 +44,21 @@ export class AppComponent implements OnInit{
 
   logout() {
     this.authService.logout();
+  }
+
+  currentUserMail = document.cookie ? document.cookie.split('=')[2].replace('%40', '@') : '';
+  currentUser = document.cookie ? document.cookie.split('=')[2].replace('%40getyooz.com', '').replace('.', ' ') : '';
+  currentUserUC = this.currentUser.split(" ");
+  totototttoto = this.toto();
+
+  toto(){
+    if(this.currentUser) {
+      for(let i = 0 ; i < this.currentUserUC.length; i++) {
+        this.currentUserUC[i] = this.currentUserUC[i][0].toUpperCase() + this.currentUserUC[i].substring(1);
+      }
+    }
+
+    return this.currentUserUC.join(" ") || '';
   }
 
 }

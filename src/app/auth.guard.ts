@@ -10,6 +10,24 @@ export const AuthGuard: CanActivateFn = (route, state) => {
 
   const token = authService.getToken();
 
+  const tokenA = document.cookie.split(';').find(row => row.startsWith('ica_tk'))?.split('=')[1];
+  const email = document.cookie.split(';').find(row => row.startsWith('ica_em'))?.split('=')[1];
+  const tokenB = document.cookie.split(';').find(row => row.startsWith('tokenn'))?.split('=')[1];
+  const allCookie = document.cookie.split('=')[2].replace('%40getyooz.com', '').replace('.', ' ');
+  const totoCookie = allCookie.split(" ");
+
+  for(let i = 0 ; i < totoCookie.length; i++) {
+    totoCookie[i] = totoCookie[i][0].toUpperCase() + totoCookie[i].substring(1);
+  }
+
+  totoCookie.join(" ");
+
+  console.log('TOKEN: ' + tokenA);
+  console.log('EMAIL: ' + email);
+  console.log('TOKEN 2: ' + tokenB);
+  console.log('ALL COOKIE: ' + allCookie);
+  console.log('UPPERCAS: ' + totoCookie.join(" "));
+
   if(token && !jwtHelper.isTokenExpired(token)) {
     return true;
   } else {
