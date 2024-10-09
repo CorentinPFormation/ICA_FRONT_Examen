@@ -54,10 +54,6 @@ export class ConnexionComponent {
         error: () => alert('Email ou mot de passe incorrect'),
       })
   }
-
-  logout() {
-      this.authService.logout();
-  }
 }
 
 // trouver une autre solution, meilleurs que celle ci pour ne plus avoir le bug du header qui s'affiche sur le page de connexion

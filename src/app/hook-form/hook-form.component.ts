@@ -1,18 +1,21 @@
-import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, inject, OnInit, ViewChild} from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {FormControl, ReactiveFormsModule} from '@angular/forms';
-import {AsyncPipe, NgForOf, NgStyle} from '@angular/common';
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {AsyncPipe, NgForOf, NgIf, NgStyle} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {map, Observable, startWith} from 'rxjs';
 import {MatAutocomplete, MatAutocompleteTrigger} from '@angular/material/autocomplete';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { MatOption } from '@angular/material/core';
+import { AuthService } from '../auth.service';
+import {Router} from '@angular/router';
+import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-hook-form',
   standalone: true,
-  imports: [MatInputModule, MatFormFieldModule, ReactiveFormsModule, MatSelectModule, NgStyle, AsyncPipe, MatAutocomplete, MatAutocompleteTrigger, MatOption, NgForOf],
+  imports: [MatInputModule, MatFormFieldModule, ReactiveFormsModule, MatSelectModule, NgStyle, AsyncPipe, MatAutocomplete, MatAutocompleteTrigger, MatOption, NgForOf, NgIf],
   templateUrl: './hook-form.component.html',
   styleUrl: './hook-form.component.css'
 })
@@ -38,47 +41,90 @@ export class HookFormComponent implements OnInit {
     this.isCas = this.check.nativeElement.checked;
   }
 
-  /*autocomplet form*/
-  myControl = new FormControl('');
-  myControl1 = new FormControl('');
-  options: string[] = ['Alpine', 'Leclerc', 'Socipar', 'PPI', 'Biscuiterie_réuni'];
-  erp: string[] = ['2024', 'DIFFERENT DAY', 'H00DBYAIR', 'EVILJ0RDAN', 'RED M0NEY'];
-  filteredOptions: Observable<string[]> | undefined;
-  filteredOptions1: Observable<string[]> | undefined;
-
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
 
-    this.filteredOptions1 = this.myControl1.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter1(value || '')),
-    );
-
-    this.toto();
+    this.event();
+    this.client();
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+  loginForm : FormGroup;
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  constructor(private http: HttpClient, private fb: FormBuilder, private authService: AuthService, private router: Router) {
+    this.loginForm = this.fb.group({
+      Purchase_order: [false, Validators.required],
+      Purchase_requisition: [false, Validators.required],
+      Payable_invoice: [false, Validators.required],
+      Payable_credit_note: [false, Validators.required],
+      Sales_invoice: [false, Validators.required],
+      Sales_credit_note: [false, Validators.required],
+      Payable_invoice_PO_based: [false, Validators.required],
+      Other_document: [false, Validators.required],
+      hook_name_fr: ['', Validators.required],
+      hook_name_en: ['', Validators.required],
+      hook_name_us: ['', Validators.required],
+      hook_name_es: ['', Validators.required],
+      description_fr: ['', Validators.required],
+      description_en: ['', Validators.required],
+      description_us: ['', Validators.required],
+      description_es: ['', Validators.required],
+
+      nom_du_champ: ['', Validators.required],
+      position: ['', Validators.required],
+      event: ['', Validators.required],
+
+      cas_fonctionnel: ['', Validators.required],
+      cas_derreur: ['', Validators.required],
+      resultats_attendus: ['', Validators.required],
+      user: ['', Validators.required],
+      phase: ['', Validators.required],
+      etape: ['', Validators.required],
+      cas_particulier: [''],
+      client: ['', Validators.required],
+      nom_spec: ['', Validators.required],
+      etatSpec: ['', Validators.required],
+
+    })
   }
-
-  private _filter1(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.erp.filter(erpl => erpl.toLowerCase().includes(filterValue));
-  }
-
-  constructor(private http: HttpClient) { }
 
   events: any[] = [];
+  clientData: any[] = [];
 
-  toto() {
+  event() {
     this.http.get('http://localhost:3000/events').pipe(map((dataApi: any) => dataApi)).subscribe((data: any[]) => {
       this.events = data;
     });
+  }
+
+  client() {
+    this.http.get('http://localhost:3000/client').pipe(map((dataApi: any) => dataApi)).subscribe((data: any[]) => {
+      this.clientData = data;
+    });
+  }
+
+  save() {
+    const {
+      Purchase_order, Purchase_requisition, Payable_invoice, Payable_credit_note, Sales_invoice, Sales_credit_note, Payable_invoice_PO_based, Other_document,
+      hook_name_fr, hook_name_en, hook_name_us, hook_name_es,
+      description_fr, description_en, description_us, description_es,
+      nom_du_champ, position, event,
+      cas_fonctionnel, cas_derreur, resultats_attendus,
+      user, phase, etape,
+      cas_particulier,
+      client, nom_spec, etatSpec
+    } = this.loginForm.value;
+
+    this.authService.hookNameFr(
+      Purchase_order, Purchase_requisition, Payable_invoice, Payable_credit_note, Sales_invoice, Sales_credit_note,Payable_invoice_PO_based, Other_document,
+      hook_name_fr, hook_name_en, hook_name_us, hook_name_es,
+      description_fr, description_en, description_us, description_es,
+      nom_du_champ, position, event,
+      cas_fonctionnel, cas_derreur, resultats_attendus,
+      user, phase, etape,
+      cas_particulier,
+      client, nom_spec, etatSpec
+      ).subscribe({
+      next: () => this.router.navigate(['/list-hook']),
+      error: () => alert('formulaire pas entierement rempli'),
+    })
   }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpecComponent } from './spec.component';
+import { ListHookComponent } from './list-hook.component';
 
-describe('SpecComponent', () => {
-  let component: SpecComponent;
-  let fixture: ComponentFixture<SpecComponent>;
+describe('ListHookComponent', () => {
+  let component: ListHookComponent;
+  let fixture: ComponentFixture<ListHookComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SpecComponent]
+      imports: [ListHookComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SpecComponent);
+    fixture = TestBed.createComponent(ListHookComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
