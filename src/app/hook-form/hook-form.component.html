@@ -1,52 +1,52 @@
-<form class="hookform">
+<form class="hookform" [formGroup]="loginForm">
 
   <div class="document-type">
-    <h2>Type(s) de document</h2>
+    <h2>Type(s) de document (Obligatoire, min. 1)</h2>
     <div><p>Commande</p>
       <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" formControlName="Purchase_order">
         <span class="slider round"></span>
       </label></div>
 
     <div><p>Demande d'achat</p>
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" formControlName="Purchase_requisition">
       <span class="slider round"></span>
     </label></div>
 
     <div><p>Facture d'achat</p>
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" formControlName="Payable_invoice">
       <span class="slider round"></span>
     </label></div>
 
     <div><p>Avoir d'achat</p>
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" formControlName="Payable_credit_note">
       <span class="slider round"></span>
     </label></div>
 
     <div><p>Facture de vente</p>
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" formControlName="Sales_invoice">
       <span class="slider round"></span>
     </label></div>
 
     <div><p>Avoir de vente</p>
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" formControlName="Sales_credit_note">
       <span class="slider round"></span>
     </label></div>
 
     <div><p>Facture sur commande</p>
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" formControlName="Payable_invoice_PO_based">
       <span class="slider round"></span>
       </label></div>
 
     <div><p>Autre document</p>
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" formControlName="Other_document">
       <span class="slider round"></span>
     </label></div>
 
@@ -56,22 +56,26 @@
     <h2>Nom du hook</h2>
     <mat-form-field appearance="outline">
       <mat-label>Français FR</mat-label>
-      <input matInput required>
+      <input matInput #namefr maxlength="50" formControlName="hook_name_fr">
+      <mat-hint align="end">{{namefr.value.length}} / 50</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>English EN</mat-label>
-      <input matInput required>
+      <input matInput #nameen maxlength="50" formControlName="hook_name_en">
+      <mat-hint align="end">{{nameen.value.length}} / 50</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>English US</mat-label>
-      <input matInput required>
+      <input matInput #nameus maxlength="50" formControlName="hook_name_us">
+      <mat-hint align="end">{{nameus.value.length}} / 50</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Espagnol ES</mat-label>
-      <input matInput required>
+      <input matInput #namees maxlength="50" formControlName="hook_name_es">
+      <mat-hint align="end">{{namees.value.length}} / 50</mat-hint>
     </mat-form-field>
   </div>
 
@@ -79,22 +83,26 @@
     <h2>Description du hook</h2>
     <mat-form-field appearance="outline">
       <mat-label>Français FR</mat-label>
-      <textarea matInput required></textarea>
+      <textarea matInput #fr maxlength="255" formControlName="description_fr"></textarea>
+      <mat-hint align="end">{{fr.value.length}} / 255</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>English EN</mat-label>
-      <textarea matInput required></textarea>
+      <textarea matInput #en maxlength="255" formControlName="description_en"></textarea>
+      <mat-hint align="end">{{en.value.length}} / 255</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>English US</mat-label>
-      <textarea matInput required></textarea>
+      <textarea matInput #us maxlength="255" formControlName="description_us"></textarea>
+      <mat-hint align="end">{{us.value.length}} / 255</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Espagnol ES</mat-label>
-      <textarea matInput required></textarea>
+      <textarea matInput #es maxlength="255"formControlName="description_es"></textarea>
+      <mat-hint align="end">{{es.value.length}} / 255</mat-hint>
     </mat-form-field>
   </div>
 
@@ -111,18 +119,18 @@
     <h2 [ngStyle]="{'display': isTextVisible ? 'none' : 'block'}">Modification de champ</h2>
     <mat-form-field [ngStyle]="{'display': isTextVisible ? 'none' : 'block'}" appearance="outline">
       <mat-label>Nom du champ</mat-label>
-      <input matInput placeholder="Ex. Champ perso 1">
+      <input matInput placeholder="Ex. Champ perso 1" formControlName="nom_du_champ">
     </mat-form-field>
 
     <mat-form-field [ngStyle]="{'display': isTextVisible ? 'none' : 'block'}" appearance="outline">
       <mat-label>Position</mat-label>
-      <input matInput placeholder="Ex. Invoice line">
+      <input matInput placeholder="Ex. Invoice line" formControlName="position">
     </mat-form-field>
 
     <h2 [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}">Autre action</h2>
     <mat-form-field id="text" [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}" appearance="outline">
       <mat-label>Veuillez choisir une action</mat-label>
-      <mat-select multiple>
+      <mat-select multiple formControlName="event">
         <mat-option *ngFor="let event of events" value="{{ event.id_events }}">{{ event.name }}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -133,17 +141,20 @@
     <h2>Processus du hook</h2>
     <mat-form-field appearance="outline">
       <mat-label>Cas fonctionnel</mat-label>
-      <textarea matInput placeholder="Description du hook bien détaillé" required></textarea>
+      <textarea matInput placeholder="Description du hook bien détaillé" #fonct maxlength="255" formControlName="cas_fonctionnel"></textarea>
+      <mat-hint align="end">{{fonct.value.length}} / 255</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Cas d'erreur</mat-label>
-      <textarea matInput placeholder="Mettre un ou plusieurs exemple(s) potentiel d'erreur bien détaillé" required></textarea>
+      <textarea matInput placeholder="Mettre un ou plusieurs exemple(s) potentiel d'erreur bien détaillé" #err maxlength="255" formControlName="cas_derreur" ></textarea>
+      <mat-hint align="end">{{err.value.length}} / 255</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Résultats attendus</mat-label>
-      <textarea matInput placeholder="Décrire précisement le résultat attendu" required></textarea>
+      <textarea matInput placeholder="Décrire précisement le résultat attendu" #result maxlength="255" formControlName="resultats_attendus"></textarea>
+      <mat-hint align="end">{{result.value.length}} / 255</mat-hint>
     </mat-form-field>
   </div>
 
@@ -152,16 +163,16 @@
     <p>Prise d'identité (selon les phases a tester)</p>
     <mat-form-field appearance="outline">
       <mat-label>Utilisateur</mat-label>
-      <input matInput required>
+      <input matInput formControlName="user">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Phase</mat-label>
-      <input matInput placeholder="Ex. Enregistrement" required>
+      <input matInput placeholder="Ex. Enregistrement" formControlName="phase">
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Étape</mat-label>
-      <input matInput #etape maxlength="1" required>
+      <input matInput #etape maxlength="1" formControlName="etape">
       <mat-hint align="end">{{etape.value.length}} / 1</mat-hint>
     </mat-form-field>
 
@@ -176,7 +187,7 @@
 
     <mat-form-field id="text3" [ngStyle]="{'display': isCas ? 'block' : 'none'}" appearance="outline">
       <mat-label>Cas particulier</mat-label>
-      <textarea matInput placeholder="Décrir précisement le résultats attendus"></textarea>
+      <textarea matInput placeholder="Décrir précisement le résultats attendus" formControlName="cas_particulier"></textarea>
     </mat-form-field>
 
   </div>
@@ -188,38 +199,31 @@
       <input type="text"
              aria-label="Number"
              matInput
-             [formControl]="myControl"
-             [matAutocomplete]="auto">
+             [matAutocomplete]="auto"
+             formControlName="client">
       <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-        @for (option of filteredOptions | async; track option) {
-          <mat-option [value]="option">{{option}}</mat-option>
-        }
+        <mat-option *ngFor="let client of clientData" value="{{ client.id_client }}">{{ client.name }}</mat-option>
       </mat-autocomplete>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Nom de la spec</mat-label>
-      <input matInput>
+      <input matInput #name maxlength="50" formControlName="nom_spec">
+      <mat-hint align="end">{{name .value.length}} / 50</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>ERP</mat-label>
-      <input type="text"
-             aria-label="Number"
-             matInput
-             [formControl]="myControl1"
-             [matAutocomplete]="auto1">
-      <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
-        @for (erpl of filteredOptions1 | async; track erpl) {
-          <mat-option [value]="erpl">{{erpl}}</mat-option>
-        }
-      </mat-autocomplete>
+      <mat-label>État de la spec</mat-label>
+      <mat-select formControlName="etatSpec">
+        <mat-option value="Complété">Complété</mat-option>
+        <mat-option value="Brouillon">Brouillon</mat-option>
+      </mat-select>
     </mat-form-field>
 
   </div>
 
   <div class="button">
-    <button type="submit" class="save">Enregistrer la spécification</button>
+    <button type="submit" class="save" (click)="save()" formmethod="post">Enregistrer la spécification</button>
     <button type="submit" class="preview">Prévisualiser la spécification</button>
   </div>
 
