@@ -1050,7 +1050,7 @@ export class HookDocxGen {
             ...Array.from({ length: 15}, () => new Paragraph({})),
             new Paragraph({children: [logoYooz]}),
             ...Array.from({ length: 15}, () => new Paragraph({})),
-            new Paragraph({children: [new TextRun({text: "**Titre**", bold: true, font: font, size: 32, color: '3C4857'})], alignment: AlignmentType.CENTER}),
+            new Paragraph({children: [new TextRun({text: genForm.nom_spec, bold: true, font: font, size: 32, color: '3C4857'})], alignment: AlignmentType.CENTER}),
             new Paragraph({children: [new TextRun({text: "Hook Form specifications", bold: true, font: font, size: 32, color: '3C4857'})], alignment: AlignmentType.CENTER}),
             new Paragraph({children: [new TextRun({text: "Table of contents", bold: true, font: font, color: '3C4857'})], pageBreakBefore: true}),
             new Paragraph({children: [new InternalHyperlink({children: [new TextRun({text: "1. Document type…………………………………………………………………………….………………3", font: font})], anchor: "documentType"})]}),
