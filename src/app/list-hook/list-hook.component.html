@@ -8,7 +8,7 @@
 </div>
 
 <div class="listOfTheHooks">
-  <a href="#" *ngFor="let hook of filteredHooks()" class="List">
+  <a href="/id-hook={{ hook.id_hook }}" *ngFor="let hook of filteredHooks()" class="List">
     <h2>{{ hook.state }} <br> {{ hook.name }}</h2>
     <p>{{ hook.creation_date }} • client</p>
   </a>
