@@ -10,7 +10,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { MatOption } from '@angular/material/core';
 import { AuthService } from '../auth.service';
 import {Router} from '@angular/router';
-import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
+import {HookDocxGen} from './hook-form-gen';
 
 @Component({
   selector: 'app-hook-form',
@@ -19,6 +19,7 @@ import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
   templateUrl: './hook-form.component.html',
   styleUrl: './hook-form.component.css'
 })
+
 export class HookFormComponent implements OnInit {
 
   /*@HostListener('window:beforeunload', ['$event'])
@@ -49,7 +50,7 @@ export class HookFormComponent implements OnInit {
 
   loginForm : FormGroup;
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private authService: AuthService, private router: Router, private hookDocxGen: HookDocxGen) {
     this.loginForm = this.fb.group({
       Purchase_order: [false, Validators.required],
       Purchase_requisition: [false, Validators.required],
@@ -71,6 +72,8 @@ export class HookFormComponent implements OnInit {
       nom_du_champ: ['', Validators.required],
       position: ['', Validators.required],
       event: ['', Validators.required],
+      opening_document_phase: [''],
+      opening_document_step: [''],
 
       cas_fonctionnel: ['', Validators.required],
       cas_derreur: ['', Validators.required],
@@ -106,7 +109,7 @@ export class HookFormComponent implements OnInit {
       Purchase_order, Purchase_requisition, Payable_invoice, Payable_credit_note, Sales_invoice, Sales_credit_note, Payable_invoice_PO_based, Other_document,
       hook_name_fr, hook_name_en, hook_name_us, hook_name_es,
       description_fr, description_en, description_us, description_es,
-      nom_du_champ, position, event,
+      nom_du_champ, position, event, opening_document_phase, opening_document_step,
       cas_fonctionnel, cas_derreur, resultats_attendus,
       user, phase, etape,
       cas_particulier,
@@ -117,7 +120,7 @@ export class HookFormComponent implements OnInit {
       Purchase_order, Purchase_requisition, Payable_invoice, Payable_credit_note, Sales_invoice, Sales_credit_note,Payable_invoice_PO_based, Other_document,
       hook_name_fr, hook_name_en, hook_name_us, hook_name_es,
       description_fr, description_en, description_us, description_es,
-      nom_du_champ, position, event,
+      nom_du_champ, position, event, opening_document_phase, opening_document_step,
       cas_fonctionnel, cas_derreur, resultats_attendus,
       user, phase, etape,
       cas_particulier,
@@ -126,5 +129,9 @@ export class HookFormComponent implements OnInit {
       next: () => this.router.navigate(['/list-hook']),
       error: () => alert('formulaire pas entierement rempli'),
     })
+  }
+
+  genSpec() {
+    this.hookDocxGen.hookGen(this.loginForm.value)
   }
 }
