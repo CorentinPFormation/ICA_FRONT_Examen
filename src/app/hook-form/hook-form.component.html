@@ -131,8 +131,19 @@
     <mat-form-field id="text" [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}" appearance="outline">
       <mat-label>Veuillez choisir une action</mat-label>
       <mat-select multiple formControlName="event">
-        <mat-option *ngFor="let event of events" value="{{ event.id_events }}">{{ event.name }}</mat-option>
+        <mat-option *ngFor="let event of events" value="{{ event.name }}">{{ event.name }}</mat-option>
       </mat-select>
+    </mat-form-field>
+
+    <p [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}">Si event a l'ouverture du document selectioné</p>
+    <mat-form-field [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}" appearance="outline">
+      <mat-label>Phase</mat-label>
+      <input matInput placeholder="Ex. Enregistrement" formControlName="opening_document_phase">
+    </mat-form-field>
+    <mat-form-field [ngStyle]="{'display': isTextVisible ? 'block' : 'none'}" appearance="outline">
+      <mat-label>Étape</mat-label>
+      <input matInput #eventStep maxlength="1" formControlName="opening_document_step">
+      <mat-hint align="end">{{eventStep.value.length}} / 1</mat-hint>
     </mat-form-field>
 
   </div>
@@ -149,12 +160,6 @@
       <mat-label>Cas d'erreur</mat-label>
       <textarea matInput placeholder="Mettre un ou plusieurs exemple(s) potentiel d'erreur bien détaillé" #err maxlength="255" formControlName="cas_derreur" ></textarea>
       <mat-hint align="end">{{err.value.length}} / 255</mat-hint>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Résultats attendus</mat-label>
-      <textarea matInput placeholder="Décrire précisement le résultat attendu" #result maxlength="255" formControlName="resultats_attendus"></textarea>
-      <mat-hint align="end">{{result.value.length}} / 255</mat-hint>
     </mat-form-field>
   </div>
 
@@ -174,6 +179,12 @@
       <mat-label>Étape</mat-label>
       <input matInput #etape maxlength="1" formControlName="etape">
       <mat-hint align="end">{{etape.value.length}} / 1</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Résultats attendus</mat-label>
+      <textarea matInput placeholder="Décrire précisement le résultat attendu" #result maxlength="255" formControlName="resultats_attendus"></textarea>
+      <mat-hint align="end">{{result.value.length}} / 255</mat-hint>
     </mat-form-field>
 
   </div>
@@ -228,7 +239,7 @@
   </div>
 
   <div class="button2">
-    <button type="submit" class="generate">Générer la spécification</button>
+    <button type="submit" class="generate" (click)="genSpec()">Générer la spécification</button>
   </div>
 
 </form>
