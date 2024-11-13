@@ -23,7 +23,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class ListHookComponent implements OnInit{
   hookData: any[] = [];
-  searchTerm: string = '';
+  searchHook: string = '';
 
   ngOnInit() {
     this.listOfHook();
@@ -44,11 +44,12 @@ export class ListHookComponent implements OnInit{
   }
 
   filteredHooks() {
-    if (!this.searchTerm) {
+    if (this.searchHook) {
+      return this.hookData.filter((hook) => {
+        return hook.name.toLowerCase().includes(this.searchHook.toLowerCase());
+      })
+    } else {
       return this.hookData;
     }
-    return this.hookData.filter((hook) => {
-      return hook.name.toLowerCase().includes(this.searchTerm.toLowerCase());
-    })
   }
 }

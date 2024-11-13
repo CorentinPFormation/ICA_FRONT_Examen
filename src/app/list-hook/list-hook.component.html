@@ -3,8 +3,9 @@
 <div>
   <mat-form-field appearance="outline" class="searchBarHook">
     <mat-label>Rechercher une spec</mat-label>
-    <input matInput [(ngModel)]="searchTerm">
+    <input matInput [(ngModel)]="searchHook">
   </mat-form-field>
+  <p>Nombre de specs trouvés: <b>{{ this.filteredHooks().length }}</b></p>
 </div>
 
 <div class="listOfTheHooks">

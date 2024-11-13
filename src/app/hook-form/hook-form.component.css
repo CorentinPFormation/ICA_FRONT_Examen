@@ -109,29 +109,34 @@
   grid-row: 5;
 }
 
-.test {
+.processus1 {
   grid-column: 2;
   grid-row: 6;
 }
 
-.cas-particulier {
+.test {
   grid-column: 2;
   grid-row: 7;
 }
 
-.savespec {
+.cas-particulier {
   grid-column: 2;
   grid-row: 8;
 }
 
-.button {
+.savespec {
   grid-column: 2;
   grid-row: 9;
 }
 
-.button2 {
+.button {
   grid-column: 2;
   grid-row: 10;
+}
+
+.button2 {
+  grid-column: 2;
+  grid-row: 11;
 }
 
 .generate {
