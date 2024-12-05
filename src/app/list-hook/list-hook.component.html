@@ -1,15 +1,17 @@
-<h1>Liste de mes spécification de hook</h1>
+<h1>Liste de mes spécifications de hook</h1>
 
 <div>
   <mat-form-field appearance="outline" class="searchBarHook">
     <mat-label>Rechercher une spec</mat-label>
-    <input matInput [(ngModel)]="searchTerm">
+    <input matInput [(ngModel)]="searchHook">
   </mat-form-field>
+  <p>Nombre de specs trouvés: <b>{{filteredHooks().length }}</b></p>
 </div>
 
 <div class="listOfTheHooks">
-  <a href="#" *ngFor="let hook of filteredHooks()" class="List">
+  <a href="/list-hook/id={{ hook.id_hook }}" *ngFor="let hook of filteredHooks()" class="List">
     <h2>{{ hook.state }} <br> {{ hook.name }}</h2>
-    <p>{{ hook.creation_date }} • client</p>
+    <p>{{ hook.creation_date.replace("T", " - ").split('.')[0] }} • client</p>
   </a>
+  <h3 *ngIf="filteredHooks().length === 0">Aucune spec ne correspond a votre recherche : (</h3>
 </div>

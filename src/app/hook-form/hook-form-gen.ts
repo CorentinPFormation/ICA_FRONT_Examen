@@ -1104,7 +1104,7 @@ export class HookDocxGen {
     });
 
     Packer.toBlob(doc).then((blob) => {
-      saveAs(blob, 'Test_gen.docx');
+      saveAs(blob, `${genForm.nom_spec}.docx`);
     });
   }
 }

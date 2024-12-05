@@ -45,12 +45,13 @@ h2 {
 
 .spec {
   text-decoration: none;
-  color: #9FADBC;
+  color: var(--text-color);
+  padding: 3px;
 }
 
-.spec:hover, .imgheader:hover {
+.spec:hover, .imgheader:hover, .profil:hover {
   border-radius: 5px;
-  background-color: #333C43;
+  background-color: var(--header-hover);
 }
 
 .imgheader {
@@ -107,6 +108,10 @@ h2 {
   grid-row: 1;
 }
 
+.theme{
+  display: none;
+}
+
 .bug {
   display: none;
 }
@@ -144,10 +149,29 @@ h2 {
     grid-row: 1;
   }
 
+  .theme{
+    display: block;
+    grid-column: 50;
+    grid-row: 1;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    padding: 3px;
+  }
+
+  .theme:hover {
+    background-color: var(--header-hover);
+  }
+
   .bug {
     display: block;
     grid-column: 51;
     grid-row: 1;
+    padding: 3px;
+  }
+
+  .bug:hover {
+    background-color: var(--header-hover);
   }
 
   .profil {
@@ -263,7 +287,7 @@ h2 {
 .menu {
   position: fixed;
   z-index: 998;
-  background-color: #1D2125;
+  background-color: var(--background-color);
   top: 0;
   bottom: 0;
   left: 0;
@@ -278,9 +302,14 @@ h2 {
 }
 
 .acceuilMenu, .specMenu, .bugMenu {
-  background-color: #333C43;
+  background-color: var(--background-slider-before);
   margin-left: 10px;
   margin-right: 10px;
+  box-shadow: var(--shadow-box);
+}
+
+.acceuilMenu > a > div, .specMenu > a > div, .bugMenu > a > div{
+  color: var(--text-color);
 }
 
 .menu > div {
@@ -314,7 +343,16 @@ h2 {
 }
 
 .createSpecMenu > a > div, .specbutton {
-  color: black;
+  color: var(--button-color);
+}
+
+.themeMenu {
+  display: flex;
+  grid-row: 1;
+  justify-content: end;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .bugMenu {
