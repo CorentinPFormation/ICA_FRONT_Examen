@@ -1,7 +1,7 @@
 <form class="hookform" [formGroup]="loginForm">
 
   <div class="document-type">
-    <h2>Type(s) de document (Obligatoire, min. 1)</h2>
+    <h2>Type(s) de document <br>(Obligatoire, min. 1)</h2>
     <div><p>Commande</p>
       <label class="switch">
         <input type="checkbox" formControlName="Purchase_order">
@@ -152,15 +152,17 @@
     <h2>Processus du hook</h2>
     <mat-form-field appearance="outline">
       <mat-label>Cas fonctionnel</mat-label>
-      <textarea matInput placeholder="Description du hook bien détaillé" #fonct maxlength="255" formControlName="cas_fonctionnel"></textarea>
+      <textarea matInput placeholder="Description du hook bien détaillé" #fonct maxlength="255" formControlName="cas_fonctionnel" class="cas-fonct"></textarea>
       <mat-hint align="end">{{fonct.value.length}} / 255</mat-hint>
     </mat-form-field>
+  </div>
 
+  <div class="processus1">
     <mat-form-field appearance="outline">
-      <mat-label>Cas d'erreur</mat-label>
-      <textarea matInput placeholder="Mettre un ou plusieurs exemple(s) potentiel d'erreur bien détaillé" #err maxlength="255" formControlName="cas_derreur" ></textarea>
-      <mat-hint align="end">{{err.value.length}} / 255</mat-hint>
-    </mat-form-field>
+    <mat-label>Cas d'erreur</mat-label>
+    <textarea matInput placeholder="Mettre un ou plusieurs exemple(s) potentiel d'erreur bien détaillé" #err maxlength="255" formControlName="cas_derreur" class="cas-err"></textarea>
+    <mat-hint align="end">{{err.value.length}} / 255</mat-hint>
+  </mat-form-field>
   </div>
 
   <div class="test">
