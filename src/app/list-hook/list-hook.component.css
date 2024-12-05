@@ -8,17 +8,18 @@ h1 {
 
 .List {
   display: block;
-  background-color: #333C43;
+  background-color: var(--background-list);
   border-radius: 5px;
   padding-left: 10px;
   padding-top: 0.1px;
   padding-bottom: 0.1px;
   margin-bottom: 20px;
   overflow-wrap: break-word;
+  box-shadow: var(--shadow-box);
 }
 
 .List:hover {
-  background-color: #485560;
+  background-color: var(--hover-list);
 }
 
 @media (min-width: 440px) {

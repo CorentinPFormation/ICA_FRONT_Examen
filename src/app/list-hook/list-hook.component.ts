@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {map} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormField, MatLabel} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
@@ -17,6 +17,7 @@ import { HttpHeaders } from '@angular/common/http';
     MatInput,
     MatLabel,
     ReactiveFormsModule,
+    NgIf,
   ],
   templateUrl: './list-hook.component.html',
   styleUrl: './list-hook.component.css'

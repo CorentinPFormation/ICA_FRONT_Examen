@@ -1,14 +1,78 @@
+:root {
+  --background-color: white;
+  --scrollbar-color: grey, white;
+  --text-color: #44546F;
+  --mat-option-selected-state-label-text-color: #00BFA5;
+  --mat-full-pseudo-checkbox-selected-icon-color: #00BFA5;
+  --mat-full-pseudo-checkbox-selected-checkmark-color: black;
+  --mat-option-label-text-color: #44546F;
+  --mat-option-hover-state-layer-color: rgba(26, 27, 31, 0.25);
+  --mat-option-focus-state-layer-color: rgba(26, 27, 31, 0);
+  --mat-option-selected-state-layer-color: rgba(26, 27, 31, 0.25);
+  --mat-full-pseudo-checkbox-unselected-icon-color: #44546F;
+  --mat-select-panel-background-color: #dedede;
+  --mat-select-enabled-trigger-text-color: #44546F;
+  --mat-autocomplete-background-color: #dedede;
+  --mat-autocomplete-container-shape: 5px;
+  --mdc-dialog-container-color: white;
+  --mdc-dialog-container-shape: 15px;
+  --mat-dialog-container-min-width: 375px;
+  --mat-menu-container-color: white;
+  --mat-menu-container-shape: 10px;
+  --mdc-outlined-text-field-container-shape: 4px;
+  --mdc-outlined-text-field-outline-width: 1px;
+  --mdc-outlined-text-field-focus-outline-width: 2px;
+  --mat-form-field-container-height: 56px;
+
+  --mdc-outlined-text-field-outline-color: #44546F;
+  --mdc-outlined-text-field-focus-outline-color: #b075a9;
+  --mdc-outlined-text-field-focus-label-text-color: #b075a9;
+  --mdc-outlined-text-field-label-text-color: #44546F;
+  --mdc-outlined-text-field-input-text-color: #44546F;
+  --mdc-outlined-text-field-input-text-placeholder-color: #44546F;
+  --mdc-outlined-text-field-error-focus-label-text-color: #ba1a1a;
+  --mdc-outlined-text-field-error-label-text-color: #ba1a1a;
+  --mdc-outlined-text-field-error-hover-label-text-color: #8f0004;
+  --mdc-outlined-text-field-hover-outline-color: #b075a9;
+  --mdc-outlined-text-field-error-focus-outline-color: #ba1a1a;
+  --mdc-outlined-text-field-error-hover-outline-color: #8f0004;
+  --mdc-outlined-text-field-error-outline-color: #ba1a1a;
+  --mat-form-field-subscript-text-size: 0.75rem;
+  --mat-form-field-subscript-text-tracking: 0.025rem;
+  --mat-form-field-container-vertical-padding: 16px;
+  --mat-form-field-subscript-text-line-height: 1rem;
+  --mdc-outlined-text-field-hover-label-text-color: #b075a9;
+
+  --background-slider-before: white;
+  --background-slider: white;
+  --background-checked: #00BFA5;
+
+  --button-color-prev: white;
+  --button-color: white;
+
+  --header-hover: rgba(51, 60, 67, 0.23);
+
+  --shadow-box: 2px 2px 2px 2px rgba(0,0,0,0.20);
+
+  --background-list: white;
+  --hover-list: rgba(51, 60, 67, 0.23);
+}
+
 body {
-    background-color: #1D2125;
+    background-color: var(--background-color);
+}
+
+svg {
+  fill: var(--text-color);
 }
 
 * {
   font-family: Ubuntu !important;
-  scrollbar-color: #9fadbc #1d2125;
+  scrollbar-color: var(--scrollbar-color);
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  color: #9fadbc;
+  color: var(--text-color);
 }
 
 a {
@@ -18,6 +82,48 @@ a {
 
 button, a {
   cursor: pointer;
+}
+
+html {
+  --mat-option-selected-state-label-text-color: var(--mat-option-selected-state-label-text-color);
+  --mat-full-pseudo-checkbox-selected-icon-color: var(--mat-full-pseudo-checkbox-selected-icon-color);
+  --mat-full-pseudo-checkbox-selected-checkmark-color: var(--mat-full-pseudo-checkbox-selected-checkmark-color);
+  --mat-option-label-text-color: var(--mat-option-label-text-color);
+  --mat-option-hover-state-layer-color: var(--mat-option-hover-state-layer-color);
+  --mat-option-focus-state-layer-color: var(--mat-option-focus-state-layer-color);
+  --mat-option-selected-state-layer-color: var(--mat-option-selected-state-layer-color);
+  --mat-full-pseudo-checkbox-unselected-icon-color: var(--mat-full-pseudo-checkbox-unselected-icon-color);
+  --mat-select-panel-background-color: var(--mat-select-panel-background-color);
+  --mat-select-enabled-trigger-text-color: var(--mat-select-enabled-trigger-text-color);
+  --mat-autocomplete-background-color: var(--mat-autocomplete-background-color);
+  --mat-autocomplete-container-shape: var(--mat-autocomplete-container-shape);
+  --mdc-dialog-container-color: var(--mdc-dialog-container-color);
+  --mdc-dialog-container-shape: var(--mdc-dialog-container-shape);
+  --mat-dialog-container-min-width: var(--mat-dialog-container-min-width);
+  --mat-menu-container-color: var(--mat-menu-container-color);
+  --mat-menu-container-shape: var(--mat-menu-container-shape);
+  --mdc-outlined-text-field-container-shape: var(--mdc-outlined-text-field-container-shape);
+  --mdc-outlined-text-field-outline-width: var(--mdc-outlined-text-field-outline-width);
+  --mdc-outlined-text-field-focus-outline-width: var(--mdc-outlined-text-field-focus-outline-width);
+  --mat-form-field-container-height: var(--mat-form-field-container-height);
+  --mdc-outlined-text-field-outline-color: var(--mdc-outlined-text-field-outline-color);
+  --mdc-outlined-text-field-focus-outline-color: var(--mdc-outlined-text-field-focus-outline-color);
+  --mdc-outlined-text-field-focus-label-text-color: var(--mdc-outlined-text-field-focus-label-text-color);
+  --mdc-outlined-text-field-label-text-color: var(--mdc-outlined-text-field-label-text-color);
+  --mdc-outlined-text-field-input-text-color: var(--mdc-outlined-text-field-input-text-color);
+  --mdc-outlined-text-field-input-text-placeholder-color: var(--mdc-outlined-text-field-input-text-placeholder-color);
+  --mdc-outlined-text-field-error-focus-label-text-color: var(--mdc-outlined-text-field-error-focus-label-text-color);
+  --mdc-outlined-text-field-error-label-text-color: var(--mdc-outlined-text-field-error-label-text-color);
+  --mdc-outlined-text-field-error-hover-label-text-color: var(--mdc-outlined-text-field-error-hover-label-text-color);
+  --mdc-outlined-text-field-hover-outline-color: var(--mdc-outlined-text-field-hover-outline-color);
+  --mdc-outlined-text-field-error-focus-outline-color: var(--mdc-outlined-text-field-error-focus-outline-color);
+  --mdc-outlined-text-field-error-hover-outline-color: var(--mdc-outlined-text-field-error-hover-outline-color);
+  --mdc-outlined-text-field-error-outline-color: var(--mdc-outlined-text-field-error-outline-color);
+  --mat-form-field-subscript-text-size: var(--mat-form-field-subscript-text-size);
+  --mat-form-field-subscript-text-tracking: var(--mat-form-field-subscript-text-tracking);
+  --mat-form-field-container-vertical-padding: var(--mat-form-field-container-vertical-padding);
+  --mat-form-field-subscript-text-line-height: var(--mat-form-field-subscript-text-line-height);
+  --mdc-outlined-text-field-hover-label-text-color: var(--mdc-outlined-text-field-hover-label-text-color);
 }
 
 /*-----------------------------------------------------------ANGULAR MODULE CSS-----------------------------------------------------------*/
@@ -247,11 +353,28 @@ textarea.cdk-textarea-autosize-measuring-firefox {
     color: var(--mat-app-text-color, inherit)
 }
 
-html {
+[data-theme="dark"] {
+    --background-list: #333C43;
+    --hover-list: #485560;
+
+    --background-slider-before: #333c43;
+    --background-slider: black;
+    --background-checked: #579DFF;
+
+    --button-color-prev: #9fadbc;
+    --button-color: black;
+
+    --header-hover: #333C43;
+
+    --shadow-box: none;
+
+    --scrollbar-color: #9fadbc #1d2125;
+    --text-color: #9fadbc;
+    --background-color: #1D2125;
     --mat-app-background-color: #fdfbff;
     --mat-app-text-color: #1a1b1f;
     --mat-ripple-color: rgba(26, 27, 31, 0.1);
-    --mat-option-selected-state-label-text-color: #9fadbc;
+    --mat-option-selected-state-label-text-color: #579dff;
     --mat-option-label-text-color: #9FADBC;
     --mat-option-hover-state-layer-color: rgba(26, 27, 31, 0.25);
     --mat-option-focus-state-layer-color: rgba(26, 27, 31, 0);
@@ -420,7 +543,7 @@ html {
     --mat-dialog-container-elevation-shadow: none;
     --mat-dialog-container-max-width: 560px;
     --mat-dialog-container-small-max-width: calc(100vw - 32px);
-    --mat-dialog-container-min-width: 375px;
+    --mat-dialog-container-min-width: 375px;/**//*375*/
     --mat-dialog-actions-alignment: flex-end;
     --mat-dialog-actions-padding: 16px 24px;
     --mat-dialog-content-padding: 20px 24px;
@@ -1513,10 +1636,15 @@ html {
 
 .mat-mdc-menu-content {
   padding-bottom: 0px !important;
+  box-shadow: var(--shadow-box) !important;
+}
+
+.mat-mdc-menu-panel {
+  box-shadow: var(--shadow-box);
 }
 
 @media (min-width: 440px) {
   html {
-    --mat-dialog-container-min-width: 1000px;
+    --mat-dialog-container-min-width: 800px !important;
   }
 }
