@@ -19,7 +19,11 @@ import {saveAs} from 'file-saver';
 })
 
 export class HookDocxGen {
-  async hookGen(genForm: any) {
+  async hookGen(genForm: any,
+                imageBase64Fonct: string | ArrayBuffer | null | undefined,
+                imageBase64Err: string | ArrayBuffer | null | undefined,
+                imageBase64Res: string | ArrayBuffer | null | undefined,
+                imageBase64Cas: string | ArrayBuffer | null | undefined) {
 
     const other_document = genForm.Other_document ? "Yes" : "No";
     const purchase_order = genForm.Purchase_order ? "Yes" : "No";
@@ -44,6 +48,23 @@ export class HookDocxGen {
     }
 
     const LogoYoozBase64 = await getBase64ImageFromURL("logoYoozDocx.png")
+
+    const base64DataFonct = (imageBase64Fonct as string)?.split(',')[1];
+    const imageBufferFonct = this.base64ToArrayBuffer(base64DataFonct);
+
+    const base64DataErr = (imageBase64Err as string)?.split(',')[1];
+    const imageBufferErr = this.base64ToArrayBuffer(base64DataErr);
+
+    const base64DataRes = (imageBase64Res as string)?.split(',')[1];
+    const imageBufferRes = this.base64ToArrayBuffer(base64DataRes);
+
+    const base64DataCas = (imageBase64Cas as string)?.split(',')[1];
+    const imageBufferCas = this.base64ToArrayBuffer(base64DataCas);
+
+    const imageFormFonct: any = imageBase64Fonct ? new ImageRun({data: imageBufferFonct, transformation: {width: 480, height: 240,}}) : new TextRun({text: '', font: font, size: 28});
+    const imageFormErr: any = imageBase64Err ? new ImageRun({data: imageBufferErr, transformation: {width: 480, height: 240,}}) : new TextRun({text: '', font: font, size: 28});
+    const imageFormRes: any = imageBase64Res ? new ImageRun({data: imageBufferRes, transformation: {width: 480, height: 240,}}) : new TextRun({text: '', font: font, size: 28});
+    const imageFormCas: any = imageBase64Cas ? new ImageRun({data: imageBufferCas, transformation: {width: 480, height: 240,}}) : new TextRun({text: '', font: font, size: 28});
 
     const logoYooz = new ImageRun({
       data: LogoYoozBase64.split(",")[1],
@@ -297,7 +318,7 @@ export class HookDocxGen {
                 size: 7208,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.hook_name_fr, font: font})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.nom_du_hook_fr, font: font})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -323,7 +344,7 @@ export class HookDocxGen {
                 size: 7208,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.hook_name_en, font: font})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.nom_du_hook_en, font: font})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -349,7 +370,7 @@ export class HookDocxGen {
                 size: 7208,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.hook_name_us, font: font})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.nom_du_hook_us, font: font})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -375,7 +396,7 @@ export class HookDocxGen {
                 size: 7208,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.hook_name_es, font: font})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.nom_du_hook_es, font: font})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -537,7 +558,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When opening the document') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When opening the document') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -559,7 +580,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When the document is closed and saved') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When the document is closed and saved') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -581,7 +602,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When the document is sent to another workflow step') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When the document is sent to another workflow step') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -603,7 +624,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('Adding document lines') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('Adding document lines') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -625,7 +646,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('Removing document lines') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('Removing document lines') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -647,7 +668,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When propagating the value of a line field to other lines') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When propagating the value of a line field to other lines') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -669,7 +690,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When the invoice is reconciled with the order') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When the invoice is reconciled with the order') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -691,7 +712,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('On transfer or rejection') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('On transfer or rejection') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -713,7 +734,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When the order is sent') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When the order is sent') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -735,7 +756,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('At the time of automatic document processing') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('At the time of automatic document processing') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -757,7 +778,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('On return of feedback (payment or other)') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('On return of feedback (payment or other)') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -779,7 +800,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When the document is blocked') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When the document is blocked') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -801,7 +822,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When the document is unblocked') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When the document is unblocked') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -823,7 +844,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When the order is created') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When the order is created') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -845,7 +866,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.event.includes('When the document arrives in yooz (AI return, electronic invoice, etc.)') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.autre_action.includes('When the document arrives in yooz (AI return, electronic invoice, etc.)') ? "✅" : "", font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -899,7 +920,7 @@ export class HookDocxGen {
                 size: 7000,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.nom_du_champ, font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.event_nom_du_champ, font: font, size: 18})], alignment: AlignmentType.CENTER})],
               verticalAlign: VerticalAlign.CENTER,
             }),
             new TableCell({
@@ -907,7 +928,7 @@ export class HookDocxGen {
                 size: 2010,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.position, font: font, size: 18})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.event_position, font: font, size: 18})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),
@@ -1014,7 +1035,7 @@ export class HookDocxGen {
                 top: 75,
                 bottom: 75,
               },
-              children: [new Paragraph({children: [new TextRun({text: genForm.user, font: font})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: genForm.cas_tests_user, font: font})], alignment: AlignmentType.CENTER})],
             }),
             new TableCell({
               width: {
@@ -1079,14 +1100,20 @@ export class HookDocxGen {
             new Paragraph({children: [new Bookmark({id: "hookProcess", children: [new TextRun({text: "5. Hook's process", font: font, size: 42, color: '714C6C'})]})]}),
             new Paragraph({}), new Paragraph({}),
             new Paragraph({children: [new Bookmark({id: "functionalCase", children: [new TextRun({text: "5.1 Functional case", font: font, size: 28, color: 'FF0000'})]})]}),
+            new Paragraph({}),
             new Paragraph({children: [new TextRun({text: genForm.cas_fonctionnel, font: font, size: 28})]}),
+            new Paragraph({}),
+            new Paragraph({children: [imageFormFonct]}),
             new Paragraph({children: [new TextRun({text: "*Warning: for the document opening trigger, define a", font: font, size: 28, bold: true, italics: true})], pageBreakBefore: true}),
             new Paragraph({children: [new TextRun({text: "workflow phase (and a step if necessary)!", font: font, size: 28, bold: true, italics: true})]}),
             new Paragraph({}),new Paragraph({}),new Paragraph({}),
             table5,
             new Paragraph({}),new Paragraph({}),new Paragraph({}),
             new Paragraph({children: [new Bookmark({id: "errorCases", children: [new TextRun({text: "5.2 Error cases", font: font, size: 28, color: 'FF0000'})]})]}),
-            new Paragraph({children: [new TextRun({text: genForm.cas_derreur, font: font, size: 28})]}),
+            new Paragraph({}),
+            new Paragraph({children: [new TextRun({text: genForm.cas_erreur, font: font, size: 28})]}),
+            new Paragraph({}),
+            new Paragraph({children: [imageFormErr]}),
             new Paragraph({}),new Paragraph({}),new Paragraph({}),
             new Paragraph({children: [new Bookmark({id: "testCases", children: [new TextRun({text: "6. Test cases", font: font, size: 42, color: '714C6C'})]})]}),
             new Paragraph({}),new Paragraph({}),new Paragraph({}),
@@ -1094,10 +1121,15 @@ export class HookDocxGen {
             table6,
             new Paragraph({}),new Paragraph({}),new Paragraph({}),
             new Paragraph({children: [new Bookmark({id: "expectedResults", children: [new TextRun({text: "6.2 Expected results", font: font, size: 28, color: 'FF0000'})]})]}),
+            new Paragraph({}),
             new Paragraph({children: [new TextRun({text: genForm.resultats_attendus, font: font, size: 28})]}),
+            new Paragraph({}),
+            new Paragraph({children: [imageFormRes]}),
             new Paragraph({}),new Paragraph({}),new Paragraph({}),
             new Paragraph({children: [new Bookmark({id: "specialCases", children: [new TextRun({text: "6.3 Special cases", font: font, size: 28, color: 'FF0000'})]})]}),
             new Paragraph({children: [new TextRun({text: genForm.cas_particulier, font: font, size: 28})]}),
+            new Paragraph({}),
+            new Paragraph({children: [imageFormCas]}),
           ],
         },
       ],
@@ -1106,5 +1138,15 @@ export class HookDocxGen {
     Packer.toBlob(doc).then((blob) => {
       saveAs(blob, `${genForm.nom_spec}.docx`);
     });
+  }
+
+  private base64ToArrayBuffer(base64: string): ArrayBuffer {
+    const binaryString = window.atob(base64 || '');
+    const len = binaryString.length;
+    const bytes = new Uint8Array(len);
+    for (let i = 0; i < len; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    return bytes.buffer;
   }
 }
