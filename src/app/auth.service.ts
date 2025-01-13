@@ -38,9 +38,6 @@ export class AuthService {
     client: [string], nom_spec: string, etatSpec: string
   ): Observable<Object> {
 
-    console.log(hook_name_fr)
-    console.log('commande is: ' + Purchase_order.valueOf());
-
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.getToken()}`,
     });

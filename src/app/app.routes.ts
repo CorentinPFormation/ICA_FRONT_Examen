@@ -12,6 +12,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'connexion', component: ConnexionComponent, canActivate: [LoginGuard] },
+  { path: 'hook/:id', component: HookFormComponent, canActivate: [AuthGuard]  },
   { path: 'new-hook', component: HookFormComponent, canActivate: [AuthGuard]  },
   { path: 'list-hook', component: ListHookComponent, canActivate: [AuthGuard]  },
   { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard] },
