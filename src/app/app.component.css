@@ -108,6 +108,10 @@ h2 {
   grid-row: 1;
 }
 
+.livraison {
+  display: none;
+}
+
 .theme{
   display: none;
 }
@@ -147,6 +151,14 @@ h2 {
   .creer {
     grid-column: 3;
     grid-row: 1;
+  }
+
+  .livraison {
+    display: block;
+    grid-column: 49;
+    grid-row: 1;
+    margin: 0;
+    color: var(--text-color);
   }
 
   .theme{
@@ -353,6 +365,12 @@ h2 {
   margin-top: 10px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.livraisonMenu {
+  grid-row: 18;
+  margin-left: 10px;
+  color: var(--text-color);
 }
 
 .bugMenu {

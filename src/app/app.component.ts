@@ -59,9 +59,9 @@ export class AppComponent implements OnInit{
   currentUserMail = document.cookie ? document.cookie.split('=')[2].replace('%40', '@') : '';
   currentUser = document.cookie ? document.cookie.split('=')[2].replace('%40getyooz.com', '').replace('.', ' ') : '';
   currentUserUC = this.currentUser.split(" ");
-  totototttoto = this.toto();
+  currentUsernamee = this.currentUsername();
 
-  toto(){
+  currentUsername(){
     if(this.currentUser) {
       for(let i = 0 ; i < this.currentUserUC.length; i++) {
         this.currentUserUC[i] = this.currentUserUC[i][0].toUpperCase() + this.currentUserUC[i].substring(1);

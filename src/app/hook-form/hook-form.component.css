@@ -228,7 +228,7 @@
   .button {
     grid-column: 4;
     grid-row: 3;
-    margin-top: 305px;
+    margin-top: 355px;
     margin-left: 60px;
     margin-bottom: 65px;
   }
@@ -236,7 +236,7 @@
   .button2 {
     grid-column: 4;
     grid-row: 3;
-    margin-top: 370px;
+    margin-top: 430px;
     margin-left: 60px;
   }
 }
@@ -302,3 +302,7 @@ input:checked + .slider:before {
 }
 
 /*------------------switch end------------------*/
+
+.processImage {
+  color: var(--text-color);
+}

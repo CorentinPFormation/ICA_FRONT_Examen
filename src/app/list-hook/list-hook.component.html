@@ -9,9 +9,9 @@
 </div>
 
 <div class="listOfTheHooks">
-  <a href="/list-hook/id={{ hook.id_hook }}" *ngFor="let hook of filteredHooks()" class="List">
+  <a href="/hook/{{ hook.id_hook }}" *ngFor="let hook of filteredHooks()" class="List">
     <h2>{{ hook.state }} <br> {{ hook.name }}</h2>
     <p>{{ hook.creation_date.replace("T", " - ").split('.')[0] }} • client</p>
   </a>
-  <h3 *ngIf="filteredHooks().length === 0">Aucune spec ne correspond a votre recherche : (</h3>
+  <h3 *ngIf="filteredHooks().length === 0">Aucune spec n'a été trouvé : (</h3>
 </div>
