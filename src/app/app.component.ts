@@ -5,7 +5,7 @@ import {AsyncPipe, NgForOf, NgIf, NgStyle} from '@angular/common';
 import {Router} from '@angular/router';
 import {filter, map} from 'rxjs';
 import {AuthService} from './auth.service';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ThemeService} from './theme.service';
 
 @Component({
@@ -17,6 +17,7 @@ import {ThemeService} from './theme.service';
 })
 
 export class AppComponent implements OnInit{
+  tempsDeLivraison: string = '';
 
   isDarkTheme$ = this.themeService.isDarkTheme$;
 
@@ -46,6 +47,8 @@ export class AppComponent implements OnInit{
     ).subscribe((event: NavigationEnd) => {
       this.updateConnexion(event.url);
     });
+
+    this.tempsLivraison();
   }
 
   private updateConnexion(url: string): void {
@@ -69,6 +72,29 @@ export class AppComponent implements OnInit{
     }
 
     return this.currentUserUC.join(" ") || '';
+  }
+
+  tempsLivraison() {
+    const token =this.authService.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    this.http
+      .get<{ temps_livraison: string }>('http://localhost:3000/livraison', { headers, withCredentials: true })
+      .pipe(map((dataApi: any) => dataApi))
+      .subscribe({
+        next: (data: any) => {
+          if (data && data[0].temps_livraison) {
+            this.tempsDeLivraison = data[0].temps_livraison;
+          } else {
+            console.error('Donnée non valide:', data);
+          }
+        },
+        error: (error) => {
+          console.error('Erreur lors de la récupération des données:', error);
+        }
+      });
   }
 
 }
