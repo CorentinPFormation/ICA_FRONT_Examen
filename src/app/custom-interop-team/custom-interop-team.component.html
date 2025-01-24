@@ -1,0 +1,12 @@
+<form class="customInteropCss" [formGroup]="updateLivraisonForm">
+
+  <h1>Équipe Custom Interop</h1>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Temps de livraison</mat-label>
+    <input matInput maxlength="3" formControlName="updateLivraison" required>
+  </mat-form-field>
+
+  <button type="submit" class="updateLivraisonCss" (click)="updateLivraison()" formmethod="post">Mettre à jours le temps de livraison</button>
+
+</form>

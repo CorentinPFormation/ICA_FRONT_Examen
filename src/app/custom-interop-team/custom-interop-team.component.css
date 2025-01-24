@@ -1,0 +1,19 @@
+.customInteropCss{
+  margin-left: 30px;
+}
+
+.updateLivraisonCss {
+  display: flex;
+  padding-top: 5px;
+  width: 260px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #579DFF;
+  color: var(--button-color);
+}
+
+.updateLivraisonCss:hover {
+  background-color: #76aeff;
+}

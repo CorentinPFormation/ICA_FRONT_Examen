@@ -7,6 +7,8 @@ import {AuthGuard} from './auth.guard';
 import {NgModule} from '@angular/core';
 import {LoginGuard} from './login.guard';
 import {ListHookComponent} from './list-hook/list-hook.component';
+import {CustomInteropTeamComponent} from './custom-interop-team/custom-interop-team.component';
+import {CustomInteropGuard} from './customInterop.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
@@ -15,6 +17,7 @@ export const routes: Routes = [
   { path: 'hook/:id', component: HookFormComponent, canActivate: [AuthGuard]  },
   { path: 'new-hook', component: HookFormComponent, canActivate: [AuthGuard]  },
   { path: 'list-hook', component: ListHookComponent, canActivate: [AuthGuard]  },
+  { path: 'custom-interop-team', component: CustomInteropTeamComponent, canActivate: [AuthGuard, CustomInteropGuard] },
   { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard] },
 ];
 
