@@ -1,7 +1,7 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {catchError, firstValueFrom, lastValueFrom, map, Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -53,5 +53,42 @@ export class AuthService {
       client, nom_spec, etatSpec
     }, { headers, withCredentials: true });
 
+  }
+
+  async customInteropAccess() {
+    const customInteropUrl = this.apiUrl + '/custom-interop-team';
+
+    const token = this.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+    })
+
+    try {
+      return await lastValueFrom(this.http
+        .get(customInteropUrl, {headers, withCredentials: true})
+        .pipe(
+          map(() => true),
+          catchError((error) => {
+            if (error.status === 403) {
+              console.error('Accès refusé :', error.message);
+              this.router.navigate(['/custom-lnterop-team']);
+            } else {
+              console.error('Erreur innatendu: ', error.message)
+            }
+            return of(false);
+          })
+        ))
+    } catch (error) {
+      console.error('Erreur lors de la vérification', error)
+      return false;
+    }
+  }
+
+  sendLivraisonToDb(updateLivraison: string) {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.getToken()}`,
+    });
+
+    return this.http.post(`${this.apiUrl}/update-livraison`, {updateLivraison}, { headers, withCredentials: true });
   }
 }

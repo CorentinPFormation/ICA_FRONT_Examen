@@ -23,11 +23,11 @@ import {ActivatedRoute} from '@angular/router';
 
 export class HookFormComponent implements OnInit {
 
-  /*@HostListener('window:beforeunload', ['$event'])
+  @HostListener('window:beforeunload', ['$event'])
   onBeforeUnload(event: Event) {
     event.preventDefault();
     return '';
-  }*/
+  }
 
   @ViewChild('myCheck') myCheck!: ElementRef<HTMLInputElement>;
   isTextVisible: boolean = false;
