@@ -2,8 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
 
-Le projet est dans un ZIP car ce projet et deja rataché a un git privé, pour eviter tout problème j'ai choisi cette solution
-
 ## Installation
 
 Dans un premier temps il faudra run cette commande: `npm install -g @angular/cli` pour installer angular
