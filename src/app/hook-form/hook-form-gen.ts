@@ -1042,7 +1042,7 @@ export class HookDocxGen {
                 size: 5406,
                 type: WidthType.DXA,
               },
-              children: [new Paragraph({children: [new TextRun({text: `${genForm.phase} ${genForm.etape}`, font: font})], alignment: AlignmentType.CENTER})],
+              children: [new Paragraph({children: [new TextRun({text: `${genForm.cas_tests_phase} ${genForm.cas_tests_etape}`, font: font})], alignment: AlignmentType.CENTER})],
             }),
           ],
         }),

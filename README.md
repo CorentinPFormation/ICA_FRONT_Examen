@@ -10,7 +10,7 @@ Puis `npm install` pour installer toutes les dépendances nécéssaire au foncti
 
 ## Run Project
 
-`ng serve` pour lancer le projet, il faudrat se rendre sur http://localhost:4200/ pour accéder au projet
+`npm start` pour lancer le projet, il faudrat se rendre sur http://localhost:4200/ pour accéder au projet
 
 ## Admin et non Admin
 
