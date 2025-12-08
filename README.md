@@ -14,7 +14,7 @@ Puis `npm install` pour installer toutes les dépendances nécéssaire au foncti
 
 ## Admin et non Admin
 
-Les admin n'auront pas enormemement plus d'accès que les non-admin, seulement la page http://localhost/custom-interop-team qui leur permettront de modifier le temps de livraion
+Les admin n'auront pas enormemement plus d'accès que les non-admin, seulement la page http://localhost/custom-interop-team qui leur permettront de modifier le temps de livraion et plus a l'avenir
 
 ### Database
 
