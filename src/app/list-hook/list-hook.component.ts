@@ -39,7 +39,7 @@ export class ListHookComponent implements OnInit{
       'Authorization': `Bearer ${token}`
     });
 
-    this.http.get('http://localhost:3000/list-hook-by-user', {withCredentials: true}).pipe(map((dataApi: any) => dataApi)).subscribe((data: any) => {
+    this.http.get('http://localhost:3000/hooks/list-hook-by-user', {withCredentials: true}).pipe(map((dataApi: any) => dataApi)).subscribe((data: any) => {
       this.hookData = data;
     });
   }

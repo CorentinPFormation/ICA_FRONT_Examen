@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(email: string, password: string): Observable<Object> {
-    return this.http.post(`${this.apiUrl}/login`, { email, password }, { withCredentials: true });
+    return this.http.post(`${this.apiUrl}/auth/login`, { email, password }, { withCredentials: true });
   }
 
   logout() {
@@ -42,7 +42,7 @@ export class AuthService {
       'Authorization': `Bearer ${this.getToken()}`,
     });
 
-    return this.http.post(`${this.apiUrl}/form_hook`, {
+    return this.http.post(`${this.apiUrl}/hooks/form_hook`, {
       Purchase_order, Purchase_requisition, Payable_invoice, Payable_credit_note, Sales_invoice, Sales_credit_note, Payable_invoice_PO_based, Other_document,
       hook_name_fr, hook_name_en, hook_name_us, hook_name_es,
       description_fr, description_en, description_us, description_es,
@@ -89,6 +89,6 @@ export class AuthService {
       'Authorization': `Bearer ${this.getToken()}`,
     });
 
-    return this.http.post(`${this.apiUrl}/update-livraison`, {updateLivraison}, { headers, withCredentials: true });
+    return this.http.post(`${this.apiUrl}/livraison/update-livraison`, {updateLivraison}, { headers, withCredentials: true });
   }
 }

@@ -148,7 +148,7 @@ export class HookFormComponent implements OnInit {
   }
 
   loadHookdata(id: number) {
-    this.http.get(`http://localhost:3000/hook/${id}`).subscribe((data: any) => {
+    this.http.get(`http://localhost:3000/hooks/${id}`).subscribe((data: any) => {
       if (data) {
 
         const emptyArray: Array<string> = [''];
